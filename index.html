@@ -58,12 +58,24 @@
       padding: 96px 24px 80px;
       text-align: center;
     }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
     .hero-eyebrow {
-      display: inline-block;
-      background: var(--blue-light); color: var(--blue);
-      font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
-      text-transform: uppercase; padding: 5px 14px; border-radius: 20px;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: #fff;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; padding: 7px 18px; border-radius: 20px;
       margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(41,171,226,0.35);
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #fff;
+      animation: pulse-dot 1.8s ease-in-out infinite;
     }
     .hero h1 {
       font-size: clamp(32px, 5vw, 56px);
