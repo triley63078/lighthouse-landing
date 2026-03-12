@@ -1,794 +1,519 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>919 IT Solutions LLC — North Carolina IT Services</title>
-  <meta name="description" content="Managed IT Services for small and medium businesses in the Triangle region of North Carolina. Serving Raleigh, Durham, Cary, Apex, Chapel Hill and surrounding areas.">
-
-  <!-- Open Graph / Social sharing -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.919solutions.com/">
-  <meta property="og:title" content="919 IT Solutions LLC — North Carolina IT Services">
-  <meta property="og:description" content="Honest. Experienced. Local. Managed IT Services for small businesses in the Triangle region of NC.">
-  <meta property="og:image" content="https://www.919solutions.com/og-image.svg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="919 IT Solutions LLC — North Carolina IT Services">
-  <meta name="twitter:description" content="Honest. Experienced. Local. Managed IT Services for small businesses in the Triangle region of NC.">
-  <meta name="twitter:image" content="https://www.919solutions.com/og-image.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet">
+  <title>Lighthouse — Internet Monitoring for Vacation Rentals</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 150'%3E%3Crect width='112' height='150' fill='%230f1318'/%3E%3Cpath d='M42,122 L50,30 L62,30 L70,122 Z' fill='none' stroke='%2329abe2' stroke-width='3'/%3E%3Crect x='44' y='26' width='24' height='5' fill='none' stroke='%2329abe2' stroke-width='2.5' rx='1'/%3E%3Cline x1='44' y1='26' x2='44' y2='21' stroke='%2329abe2' stroke-width='1.5'/%3E%3Cline x1='52' y1='26' x2='52' y2='21' stroke='%2329abe2' stroke-width='1.5'/%3E%3Cline x1='60' y1='26' x2='60' y2='21' stroke='%2329abe2' stroke-width='1.5'/%3E%3Cline x1='68' y1='26' x2='68' y2='21' stroke='%2329abe2' stroke-width='1.5'/%3E%3Cline x1='44' y1='21' x2='68' y2='21' stroke='%2329abe2' stroke-width='1.5'/%3E%3Crect x='46' y='10' width='20' height='12' fill='none' stroke='%2329abe2' stroke-width='2.5' rx='1.5'/%3E%3Cpath d='M46,10 Q56,2 66,10' fill='none' stroke='%2329abe2' stroke-width='2.5'/%3E%3Ccircle cx='56' cy='16' r='3' fill='%2329abe2' opacity='0.3'/%3E%3Ccircle cx='56' cy='16' r='1.5' fill='%23fbbf24'/%3E%3Crect x='36' y='122' width='40' height='6' fill='none' stroke='%2329abe2' stroke-width='2.5' rx='1'/%3E%3C/svg%3E" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9F2LPTD1D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y9F2LPTD1D');
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:   #0b1929;
-      --ink:    #1a2b3c;
-      --blue:   #1a6fc4;
-      --sky:    #3b9edd;
-      --accent: #e8f4fd;
-      --slate:  #4a6278;
-      --mid:    #8da5b8;
-      --light:  #f4f8fc;
-      --white:  #ffffff;
-      --radius: 12px;
+      --blue:       #29abe2;
+      --blue-dark:  #1a8bbf;
+      --blue-light: #e8f6fd;
+      --text:       #1a2433;
+      --text-mid:   #4a5568;
+      --text-dim:   #718096;
+      --border:     #e2e8f0;
+      --bg:         #ffffff;
+      --bg2:        #f7fafc;
     }
-
-    html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'DM Sans', sans-serif;
-      color: var(--ink);
-      background: var(--white);
-      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: var(--bg);
       line-height: 1.6;
     }
 
-    /* ── NAV ── */
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5%;
-      height: 68px;
-      background: rgba(11,25,41,0.97);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 100px;
     }
-
-    .logo {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
+    .nav-brand {
+      display: flex; align-items: center;
       text-decoration: none;
     }
-    .logo-img {
-      height: 42px;
-      width: auto;
-      display: block;
-    }
-    .logo-num {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -1px;
-    }
-    .logo-tag {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      color: var(--sky);
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
-    .nav-links a {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--mid);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--white); }
+    .nav-brand svg { flex-shrink: 0; }
     .nav-cta {
-      background: var(--blue);
-      color: var(--white) !important;
-      padding: 0.45rem 1.1rem;
-      border-radius: 6px;
-      transition: background 0.2s !important;
+      background: var(--blue); color: #fff;
+      padding: 9px 20px; border-radius: 6px;
+      font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: background 0.15s;
     }
-    .nav-cta:hover { background: var(--sky) !important; color: var(--white) !important; }
+    .nav-cta:hover { background: var(--blue-dark); text-decoration: none; }
 
-    .nav-phone {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--sky);
-      text-decoration: none;
-      margin-left: 1rem;
-    }
-
-    /* hamburger */
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
-
-    /* ── HERO ── */
-    #home {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-      padding: 120px 5% 80px;
-    }
-
-    .hero-grid {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(160deg, #f0f9ff 0%, #ffffff 60%);
+      padding: 96px 24px 80px;
       text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-      width: 100%;
     }
-    .hero-tagline { margin-left: auto; margin-right: auto; }
-    .hero-actions { justify-content: center; }
-
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
     .hero-eyebrow {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--sky);
-      margin-bottom: 1.2rem;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue); color: #fff;
+      font-size: 13px; font-weight: 700; letter-spacing: 0.07em;
+      text-transform: uppercase; padding: 7px 18px; border-radius: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(41,171,226,0.35);
     }
-
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #fff;
+      animation: pulse-dot 1.8s ease-in-out infinite;
+    }
     .hero h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      font-weight: 800;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.5px;
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800; line-height: 1.15;
+      color: var(--text); max-width: 760px; margin: 0 auto 20px;
     }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--sky);
+    .hero h1 span { color: var(--blue); }
+    .hero p {
+      font-size: 18px; color: var(--text-mid);
+      max-width: 560px; margin: 0 auto 40px;
     }
-
-    .hero-tagline {
-      font-size: 1.15rem;
-      color: var(--mid);
-      margin-bottom: 2.2rem;
-      max-width: 460px;
-      line-height: 1.7;
-    }
-
-    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
+      background: var(--blue); color: #fff;
+      padding: 14px 28px; border-radius: 8px;
+      font-size: 15px; font-weight: 600;
+      text-decoration: none; transition: background 0.15s;
       display: inline-block;
-      background: var(--blue);
-      color: var(--white);
-      text-decoration: none;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 0.85rem 2rem;
-      border-radius: var(--radius);
-      transition: background 0.2s, transform 0.15s;
-      letter-spacing: 0.03em;
     }
-    .btn-primary:hover { background: var(--sky); transform: translateY(-1px); }
-
-    .btn-ghost {
+    .btn-primary:hover { background: var(--blue-dark); text-decoration: none; }
+    .btn-secondary {
+      background: #fff; color: var(--text);
+      padding: 14px 28px; border-radius: 8px;
+      font-size: 15px; font-weight: 600; border: 1px solid var(--border);
+      text-decoration: none; transition: border-color 0.15s;
       display: inline-block;
-      border: 1.5px solid rgba(255,255,255,0.2);
-      color: var(--white);
-      text-decoration: none;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 0.85rem 2rem;
-      border-radius: var(--radius);
-      transition: border-color 0.2s, background 0.2s;
     }
-    .btn-ghost:hover { border-color: var(--sky); background: rgba(59,158,221,0.08); }
+    .btn-secondary:hover { border-color: var(--blue); color: var(--blue); text-decoration: none; }
 
-    .hero-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 18px;
-      padding: 2.5rem 2rem;
-      width: 100%;
-      max-width: 380px;
-    }
-    .hero-card-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--sky);
-      margin-bottom: 1.5rem;
-    }
-    .pill-list { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-    .pill {
-      background: rgba(59,158,221,0.12);
-      color: #a8d4f0;
-      font-size: 0.82rem;
-      padding: 0.4rem 0.9rem;
-      border-radius: 100px;
-      border: 1px solid rgba(59,158,221,0.2);
-    }
-
-    .service-area {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: var(--mid);
-      line-height: 1.6;
-    }
-    .service-area strong {
-      display: block;
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--sky);
-      margin-bottom: 0.4rem;
-    }
-
-    /* ── SECTION BASE ── */
-    section { padding: 100px 5%; }
-    .section-inner { max-width: 1200px; margin: 0 auto; }
+    /* ── Sections ── */
+    section { padding: 80px 24px; }
+    .container { max-width: 1040px; margin: 0 auto; }
     .section-label {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 1rem;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 12px;
     }
     .section-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 800;
-      color: var(--navy);
-      line-height: 1.15;
-      letter-spacing: -0.5px;
-      margin-bottom: 1.2rem;
+      font-size: clamp(24px, 3vw, 36px); font-weight: 700;
+      color: var(--text); margin-bottom: 16px;
     }
-    .section-body {
-      font-size: 1.05rem;
-      color: var(--slate);
-      max-width: 680px;
-      line-height: 1.8;
+    .section-sub {
+      font-size: 17px; color: var(--text-mid);
+      max-width: 560px; margin-bottom: 56px;
     }
 
-    /* ── MISSION ── */
-    #mission { background: var(--light); }
-    .mission-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+    /* ── Problem ── */
+    .problem { background: var(--bg2); }
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
     }
-    .mission-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+    .problem-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px;
     }
-    .stat-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 1.8rem 1.5rem;
-      border: 1px solid rgba(26,111,196,0.1);
-    }
-    .stat-number {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--blue);
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--slate);
-      line-height: 1.4;
-    }
+    .problem-card .icon { font-size: 28px; margin-bottom: 12px; }
+    .problem-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .problem-card p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
 
-    /* ── SERVICES ── */
-    #services { background: var(--white); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
+    /* ── How it works ── */
+    .steps {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 32px; counter-reset: steps;
     }
-    .service-card {
-      background: var(--light);
-      border-radius: var(--radius);
-      padding: 2rem 1.8rem;
-      border: 1px solid transparent;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    .step { position: relative; }
+    .step-num {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--blue); color: #fff;
+      font-size: 16px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px; flex-shrink: 0;
     }
-    .service-card:hover {
-      border-color: rgba(26,111,196,0.2);
-      box-shadow: 0 8px 32px rgba(26,111,196,0.08);
-      transform: translateY(-3px);
-    }
-    .service-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--accent);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.2rem;
-    }
-    .service-icon svg {
-      width: 22px;
-      height: 22px;
-      stroke: var(--blue);
-      stroke-width: 1.75;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-    .service-card h3 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.6rem;
-    }
-    .service-card p {
-      font-size: 0.9rem;
-      color: var(--slate);
-      line-height: 1.7;
-    }
+    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
 
-    /* ── ABOUT ── */
-    #about { background: var(--navy); color: var(--white); }
-    #about .section-title { color: var(--white); }
-    #about .section-label { color: var(--sky); }
+    /* ── Features ── */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .feature {
+      border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px; transition: box-shadow 0.15s;
+    }
+    .feature:hover { box-shadow: 0 4px 20px rgba(41,171,226,0.1); }
+    .feature-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--blue-light); display: flex; align-items: center;
+      justify-content: center; font-size: 20px; margin-bottom: 16px;
+    }
+    .feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .feature p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
 
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 5rem;
-      align-items: start;
+    /* ── Social proof strip ── */
+    .proof {
+      background: var(--blue);
+      padding: 48px 24px; text-align: center;
     }
+    .proof p {
+      font-size: clamp(18px, 2.5vw, 26px); font-weight: 600;
+      color: #fff; max-width: 700px; margin: 0 auto;
+      line-height: 1.5;
+    }
+    .proof span { opacity: 0.8; }
 
-    .owner-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 18px;
-      padding: 2.5rem 2rem;
-      position: sticky;
-      top: 100px;
+    /* ── Contact ── */
+    .contact { background: var(--bg2); }
+    .contact-wrap {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
     }
-    .owner-avatar {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--sky));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 1.2rem;
-    }
-    .owner-name {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 0.2rem;
-    }
-    .owner-title {
-      font-size: 0.82rem;
-      color: var(--sky);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 1.5rem;
-    }
-    .owner-bio {
-      font-size: 0.9rem;
-      color: #8da5b8;
-      line-height: 1.75;
-    }
+    @media (max-width: 700px) { .contact-wrap { grid-template-columns: 1fr; gap: 40px; } }
+    .contact-info h2 { font-size: 28px; font-weight: 700; margin-bottom: 16px; }
+    .contact-info p { font-size: 15px; color: var(--text-mid); margin-bottom: 24px; line-height: 1.7; }
+    .contact-detail { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 14px; color: var(--text-mid); }
+    .contact-detail strong { color: var(--text); }
 
-    .about-content .section-body { color: #8da5b8; }
-
-    .why-list { list-style: none; margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
-    .why-list li {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-    .why-check {
-      width: 22px;
-      height: 22px;
-      min-width: 22px;
-      border-radius: 50%;
-      background: rgba(59,158,221,0.15);
-      border: 1px solid rgba(59,158,221,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 2px;
-      font-size: 0.7rem;
-      color: var(--sky);
-    }
-    .why-list li span {
-      font-size: 0.95rem;
-      color: #8da5b8;
-      line-height: 1.6;
-    }
-    .why-list li strong {
-      color: var(--white);
-      font-weight: 500;
-    }
-
-    /* ── CONTACT ── */
-    #contact { background: var(--light); }
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-    .contact-info { display: flex; flex-direction: row; gap: 3rem; margin-top: 2.5rem; flex-wrap: wrap; }
-    .contact-item {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-    .contact-icon {
-      width: 44px;
-      height: 44px;
-      min-width: 44px;
-      background: var(--accent);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-    }
-    .contact-item a {
-      font-size: 1rem;
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .contact-item a:hover { text-decoration: underline; }
-    .contact-item p { font-size: 0.85rem; color: var(--slate); margin-top: 0.1rem; }
-
-    .contact-form {
-      background: var(--white);
-      border-radius: 18px;
-      padding: 2.5rem;
-      border: 1px solid rgba(26,111,196,0.1);
-      box-shadow: 0 4px 24px rgba(26,111,196,0.05);
-    }
-    .form-row { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.2rem; }
-    .form-row label {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--slate);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .form-row input,
-    .form-row textarea,
-    .form-row select {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      padding: 0.75rem 1rem;
-      border: 1.5px solid #dde8f2;
-      border-radius: 8px;
-      color: var(--ink);
-      background: var(--white);
-      transition: border-color 0.2s;
+    form { display: flex; flex-direction: column; gap: 16px; }
+    label { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 4px; display: block; }
+    input, textarea, select {
+      width: 100%; padding: 10px 14px;
+      border: 1px solid var(--border); border-radius: 6px;
+      font-size: 14px; color: var(--text);
+      font-family: inherit; background: #fff;
+      transition: border-color 0.15s;
       outline: none;
     }
-    .form-row input:focus,
-    .form-row textarea:focus,
-    .form-row select:focus { border-color: var(--blue); }
-    .form-row textarea { min-height: 110px; resize: vertical; }
-    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-    .btn-submit {
-      width: 100%;
-      background: var(--blue);
-      color: var(--white);
-      border: none;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
-      font-weight: 500;
-      padding: 0.9rem 2rem;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      margin-top: 0.5rem;
+    input:focus, textarea:focus, select:focus { border-color: var(--blue); }
+    textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      background: var(--blue); color: #fff;
+      padding: 12px 24px; border: none; border-radius: 6px;
+      font-size: 15px; font-weight: 600; cursor: pointer;
+      transition: background 0.15s; font-family: inherit;
     }
-    .btn-submit:hover { background: var(--sky); transform: translateY(-1px); }
+    .form-submit:hover { background: var(--blue-dark); }
+    .form-note { font-size: 12px; color: var(--text-dim); }
+    #form-success {
+      display: none; padding: 16px; border-radius: 6px;
+      background: #f0fff4; border: 1px solid #9ae6b4;
+      color: #276749; font-size: 14px;
+    }
 
-    /* ── FOOTER ── */
+    /* ── Footer ── */
     footer {
-      background: var(--navy);
-      color: var(--mid);
-      padding: 3rem 5%;
-    }
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-    .footer-copy { font-size: 0.85rem; }
-    .footer-area {
-      font-size: 0.8rem;
-      line-height: 1.6;
-      max-width: 560px;
-      text-align: center;
+      padding: 32px 24px; border-top: 1px solid var(--border);
+      text-align: center; font-size: 13px; color: var(--text-dim);
     }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero-grid, .mission-layout, .about-layout, .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .hero-visual { display: none; }
-      .owner-card { position: static; }
-      .form-row-2 { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .services-grid { grid-template-columns: 1fr; }
-      .mission-stats { grid-template-columns: 1fr 1fr; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 68px; left: 0; right: 0;
-        background: var(--navy);
-        padding: 1.5rem 5%;
-        gap: 1.2rem;
-        border-top: 1px solid rgba(255,255,255,0.08);
-      }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .footer-area { text-align: center; }
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .hero { padding: 64px 20px 56px; }
+      section { padding: 56px 20px; }
+      .nav-brand span { display: none; }
+      nav { height: 72px; }
+      .nav-brand svg { width: 200px; height: 63px; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="logo" href="#home">
-    <!-- Logo image from your WordPress site. For GitHub Pages, save header.png in your repo and change the src to "./header.png" -->
-    <img class="logo-img"
-         src="https://www.919solutions.com/header.png"
-         alt="919 IT Solutions"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-    <span style="display:none; align-items:baseline; gap:10px;">
-      <span class="logo-num">919</span>
-      <span class="logo-tag">IT Solutions</span>
-    </span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#mission">Mission</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
-  </ul>
-  <a class="nav-phone" href="tel:9193919449">919-391-9449</a>
-  <div class="hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
-    <span></span><span></span><span></span>
-  </div>
-</nav>
+  <!-- Nav -->
+  <nav>
+    <a class="nav-brand" href="#">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 150" width="320" height="100">
+        <g opacity="0.12">
+          <path d="M55 28 L0 5 L55 28" fill="#29abe2"/>
+          <path d="M55 28 L0 28 L55 28" fill="#29abe2"/>
+          <path d="M55 28 L110 5 L55 28" fill="#29abe2"/>
+          <path d="M55 28 L110 28 L55 28" fill="#29abe2"/>
+          <path d="M55 28 L18 0 L55 28" fill="#29abe2"/>
+          <path d="M55 28 L92 0 L55 28" fill="#29abe2"/>
+        </g>
+        <path d="M42,122 L50,30 L62,30 L70,122 Z" fill="none" stroke="#29abe2" stroke-width="2" stroke-linejoin="round"/>
+        <rect x="44" y="26" width="24" height="5" fill="none" stroke="#29abe2" stroke-width="2" rx="1"/>
+        <line x1="44" y1="26" x2="44" y2="21" stroke="#29abe2" stroke-width="1.5"/>
+        <line x1="48" y1="26" x2="48" y2="21" stroke="#29abe2" stroke-width="1.5"/>
+        <line x1="52" y1="26" x2="52" y2="21" stroke="#29abe2" stroke-width="1.5"/>
+        <line x1="56" y1="26" x2="56" y2="21" stroke="#29abe2" stroke-width="1.5"/>
+        <line x1="60" y1="26" x2="60" y2="21" stroke="#29abe2" stroke-width="1.5"/>
+        <line x1="64" y1="26" x2="64" y2="21" stroke="#29abe2" stroke-width="1.5"/>
+        <line x1="68" y1="26" x2="68" y2="21" stroke="#29abe2" stroke-width="1.5"/>
+        <line x1="44" y1="21" x2="68" y2="21" stroke="#29abe2" stroke-width="1.5"/>
+        <rect x="46" y="10" width="20" height="12" fill="none" stroke="#29abe2" stroke-width="2" rx="1.5"/>
+        <path d="M46,10 Q56,2 66,10" fill="none" stroke="#29abe2" stroke-width="2"/>
+        <line x1="56" y1="2" x2="56" y2="0" stroke="#29abe2" stroke-width="1.5"/>
+        <circle cx="56" cy="0" r="1.5" fill="#29abe2"/>
+        <circle cx="56" cy="16" r="5" fill="#29abe2" opacity="0.15"/>
+        <circle cx="56" cy="16" r="3" fill="#29abe2" opacity="0.3"/>
+        <circle cx="56" cy="16" r="1.5" fill="#fbbf24"/>
+        <rect x="36" y="122" width="40" height="6" fill="none" stroke="#29abe2" stroke-width="2" rx="1"/>
+        <path d="M18,136 Q37,130 56,136 Q75,142 94,136" stroke="#29abe2" stroke-width="1.5" fill="none" opacity="0.4" stroke-linecap="round"/>
+        <line x1="118" y1="18" x2="118" y2="132" stroke="#cbd5e0" stroke-width="1.5"/>
+        <text x="138" y="74" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" letter-spacing="2" fill="#1a2433">LIGHTHOUSE</text>
+        <line x1="138" y1="82" x2="472" y2="82" stroke="#29abe2" stroke-width="1.5" opacity="0.4"/>
+        <text x="140" y="99" font-family="Georgia, serif" font-size="10" font-style="italic" fill="#29abe2">by</text>
+        <text x="158" y="99" font-family="Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#4a5568">919 IT SOLUTIONS</text>
+      </svg>
+    </a>
+    <a class="nav-cta" href="#pilot">Join the Pilot</a>
+  </nav>
 
-<!-- HERO -->
-<section id="home">
-  <div class="hero-grid">
-    <div class="hero">
-      <p class="hero-eyebrow">North Carolina Managed IT Services</p>
-      <h1>Honest.<br><em>Experienced.</em><br>Local.</h1>
-      <p class="hero-tagline">Supporting small and medium businesses across the Triangle with resilient, straightforward, and cost-effective IT solutions.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Free IT Assessment</a>
-        <a href="#services" class="btn-ghost">Our Services</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- MISSION -->
-<section id="mission">
-  <div class="section-inner">
-    <div class="mission-layout">
-      <div>
-        <p class="section-label">Our Mission</p>
-        <h2 class="section-title">IT Support That Works Like an Extension of Your Team</h2>
-        <p class="section-body">At 919 IT Solutions, our mission is to provide small business owners the opportunity to focus solely on their own business goals — not their technological needs. We differentiate ourselves by partnering closely with our clients, allowing us to take a more intricate role in the day-to-day operations of your business.</p>
-        <p class="section-body" style="margin-top:1rem;">We're not your typical IT support vendor — we're an extension of your internal staff. A small, local team with a lot of experience means personal attention and dedicated resources that larger IT providers simply can't match.</p>
-      </div>
-      <div class="mission-stats">
-        <div class="stat-card">
-          <div class="stat-number">25+</div>
-          <div class="stat-label">Years of enterprise IT experience</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Local Triangle-focused service</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">Infrastructure monitoring coverage</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">SMB</div>
-          <div class="stat-label">Specialized in small &amp; mid-size business</div>
-        </div>
-      </div>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-eyebrow">Now Accepting Pilot Properties</div>
+    <h1>Your Guests Always Have<br><span>Fast, Reliable WiFi</span></h1>
+    <p>Lighthouse monitors your vacation rental's internet 24/7 and automatically fixes outages — before your guests even notice.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#pilot">Join the Free Pilot</a>
+      <a class="btn-secondary" href="#how-it-works">See How It Works</a>
     </div>
   </div>
-</section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-inner">
-    <p class="section-label">What We Do</p>
-    <h2 class="section-title">Services Built for Your Business</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v4c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 9v4c0 1.66 4.03 3 9 3s9-1.34 9-3V9"/><path d="M3 13v4c0 1.66 4.03 3 9 3s9-1.34 9-3v-4"/></svg></div>
-        <h3>Disaster Recovery</h3>
-        <p>Our backup and recovery tools ensure that your company's electronic data is kept safe and resilient against outages and data loss events.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <h3>Security</h3>
-        <p>Security is a priority. We work closely with clients to prevent security incidents that can affect business continuity and expose sensitive data.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-        <h3>Maintenance &amp; Support</h3>
-        <p>OS and software patching keeps all your systems current. We're just a phone call away when an issue arises — no phone trees, no wait times.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>24/7 Monitoring</h3>
-        <p>Round-the-clock monitoring of your servers, workstations, and infrastructure. We detect and address problems before they wreak havoc on operations.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
-        <h3>Cloud Services</h3>
-        <p>DaaS, hosted email, Microsoft 365, spam filtering, cloud storage, and cloud backup/restore — tailored to your needs and budget.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>Consulting</h3>
-        <p>Requirements outside of a standard managed service plan? We'll develop a custom solution that fits your unique environment and goals.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-inner">
-    <div class="about-layout">
-      <div>
-        <div class="owner-card">
-          <div class="owner-avatar">TR</div>
-          <div class="owner-name">Tim Riley</div>
-          <div class="owner-title">Founder &amp; Owner</div>
-          <p class="owner-bio">BS in Computer Information Systems from Union College. Over 25 years of enterprise IT experience in the defense, software, and financial services sectors — specializing in System Administration and DevOps Engineering.</p>
+  <!-- Problem -->
+  <section class="problem">
+    <div class="container">
+      <div class="section-label">The Problem</div>
+      <h2 class="section-title">WiFi Outages Are Costing You</h2>
+      <p class="section-sub">Internet issues are one of the top complaints in vacation rental reviews — and most of the time, a simple router reboot would have fixed it.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="icon">⭐</div>
+          <h3>Bad Reviews</h3>
+          <p>"WiFi didn't work all weekend" is a 1-star review waiting to happen — even if everything else about your property is perfect.</p>
+        </div>
+        <div class="problem-card">
+          <div class="icon">📞</div>
+          <h3>Late-Night Calls</h3>
+          <p>Guests call you at 11pm to report the internet is down. You talk them through a router reboot — again.</p>
+        </div>
+        <div class="problem-card">
+          <div class="icon">🚗</div>
+          <h3>Unnecessary Visits</h3>
+          <p>You drive out to the property to find the modem needed a 30-second power cycle. An hour of your time, wasted.</p>
         </div>
       </div>
-      <div class="about-content">
-        <p class="section-label">About Us</p>
-        <h2 class="section-title">Why Choose 919 IT Solutions?</h2>
-        <p class="section-body">At 919, the goal is to provide thorough, sensible IT solutions that result in real cost savings and increased productivity for your business.</p>
-        <ul class="why-list">
-          <li>
-            <span class="why-check">✓</span>
-            <span><strong>Personalized service.</strong> No call centers, no phone trees. You get a knowledgeable human being every time you reach out.</span>
-          </li>
-          <li>
-            <span class="why-check">✓</span>
-            <span><strong>Deep experience.</strong> 25+ years across System Administration, DevOps, and Infrastructure Engineering means your systems and data are in good hands.</span>
-          </li>
-          <li>
-            <span class="why-check">✓</span>
-            <span><strong>Truly local.</strong> We serve only the Triangle region of North Carolina, so we can give every client the focused attention they deserve.</span>
-          </li>
-          <li>
-            <span class="why-check">✓</span>
-            <span><strong>Honest approach.</strong> We cut through the noise and deliver practical, cost-effective solutions — not upsells.</span>
-          </li>
-          <li>
-            <span class="why-check">✓</span>
-            <span><strong>Triangle coverage.</strong> Raleigh, Durham, Chapel Hill, Cary, Apex, Holly Springs, Fuquay Varina, Garner, Wake Forest, Pittsboro, and surrounding areas.</span>
-          </li>
-        </ul>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Set It and Forget It</h2>
+      <p class="section-sub">Lighthouse is a small device that lives at your property and keeps your internet running automatically.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>We Ship the Device</h3>
+          <p>A small Lighthouse device arrives pre-configured. You plug it in near your modem during your next property visit — no technical knowledge required.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>It Monitors 24/7</h3>
+          <p>Lighthouse checks your internet connection every minute, around the clock, even when no one is at the property.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>It Fixes Issues Automatically</h3>
+          <p>When an outage is detected, Lighthouse power cycles your modem and router automatically — no call needed.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <h3>You Stay Informed</h3>
+          <p>You get an alert when something happens and a dashboard to see the status of all your properties at a glance.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-inner">
-    <p class="section-label">Get In Touch</p>
-    <h2 class="section-title">Let's Talk About Your IT Needs</h2>
-    <p class="section-body">Reach out for a free, no-obligation IT assessment. We'll take a look at your current setup and tell you exactly what we'd recommend.</p>
-    <div class="contact-info">
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" style="width:22px;height:22px;stroke:var(--blue);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.29 6.29l1.17-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+  <!-- Features -->
+  <section style="background: var(--bg2);">
+    <div class="container">
+      <div class="section-label">Features</div>
+      <h2 class="section-title">Everything You Need, Nothing You Don't</h2>
+      <p class="section-sub">Built specifically for vacation rental property managers.</p>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Automatic Power Cycling</h3>
+          <p>Detects outages and reboots your modem and router automatically — typically restoring service within 3 minutes.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔔</div>
+          <h3>Instant Alerts</h3>
+          <p>Get notified by email the moment an issue is detected at any of your properties, with details on what happened.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📡</div>
+          <h3>Works Offline</h3>
+          <p>Zigbee-based smart plug control works even when the internet is down, so Lighthouse can fix the very problem it detects.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📶</div>
+          <h3>Always Reachable via LTE</h3>
+          <p>The Lighthouse device has its own built-in cellular connection — completely separate from your property's internet. Even during a total outage, Lighthouse stays in contact with our servers so monitoring, alerts, and remote diagnostics never go dark. <em>This connection is for the Lighthouse device only, not for your guests.</em></p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure by Design</h3>
+          <p>All devices connect over an encrypted private network. Your property data never touches the public internet.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📦</div>
+          <h3>Fully Managed</h3>
+          <p>We handle setup, updates, and maintenance. If something needs attention, we know before you do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilot Program -->
+  <section id="pilot" style="background: var(--bg);">
+    <div class="container">
+      <div class="section-label">Pilot Program</div>
+      <h2 class="section-title">Try It Free for 3 Months</h2>
+      <p class="section-sub">We're looking for a small number of Oak Island and Southport property owners to pilot Lighthouse at no cost. Here's exactly what that means:</p>
+      <div class="problem-grid">
+        <div class="problem-card" style="border-color: var(--blue); border-width: 2px;">
+          <div class="icon">📦</div>
+          <h3>We Ship Everything</h3>
+          <p>We'll send you the Lighthouse device pre-configured. All you do is plug it in near your modem — no technician visit required.</p>
+        </div>
+        <div class="problem-card" style="border-color: var(--blue); border-width: 2px;">
+          <div class="icon">💰</div>
+          <h3>Completely Free for 3 Months</h3>
+          <p>No credit card, no commitment. The full Lighthouse service — hardware, monitoring, and automatic fixes — at zero cost during the pilot.</p>
+        </div>
+        <div class="problem-card" style="border-color: var(--blue); border-width: 2px;">
+          <div class="icon">🚚</div>
+          <h3>No Risk</h3>
+          <p>If Lighthouse isn't right for you, just let us know. We'll send a return shipping label and you ship the device back — no questions asked.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 48px;">
+        <a class="btn-primary" href="#contact" style="font-size: 16px; padding: 16px 36px;">Apply for the Pilot Program</a>
+        <p style="margin-top: 16px; font-size: 13px; color: var(--text-dim);">Limited spots available. Oak Island and Southport, NC properties only at this time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pull quote -->
+  <div class="proof">
+    <p>"Most WiFi outages at vacation rentals are caused by a modem or router that just needs a reboot.<br><span>Lighthouse detects it and fixes it automatically — so you don't have to."</span></p>
+  </div>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <div class="section-label">Get in Touch</div>
+          <h2>Interested in the Pilot Program?</h2>
+          <p>We're currently working with a small number of property managers to pilot Lighthouse. If you manage vacation rentals and want to eliminate WiFi complaints, we'd love to talk.</p>
+          <p>Fill out the form and we'll get back to you within one business day.</p>
+          <div class="contact-detail">
+            <strong>919 IT Solutions</strong>
+          </div>
+          <div class="contact-detail">
+            <!-- Add phone number here if desired -->
+          </div>
+        </div>
         <div>
-          <a href="tel:9193919449">919-391-9449</a>
-          <p>Mon–Fri, business hours</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" style="width:22px;height:22px;stroke:var(--blue);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <div>
-          <a href="mailto:info@919solutions.com">info@919solutions.com</a>
-          <p>We respond within one business day</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" style="width:22px;height:22px;stroke:var(--blue);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div>
-          <a href="https://maps.google.com/?q=964+High+House+Road+Unit+4606+Cary+NC+27513" target="_blank">964 High House Rd, Unit #4606<br>Cary, NC 27513</a>
-          <p>Serving the Triangle Region, NC</p>
+          <!--
+            Formspree setup:
+            1. Sign up at formspree.io
+            2. Create a new form
+            3. Replace YOUR_FORM_ID below with your form ID
+            e.g. action="https://formspree.io/f/xpzgkwqr"
+          -->
+          <div id="form-success">
+            ✓ Thanks! We'll be in touch within one business day.
+          </div>
+          <form action="https://formspree.io/f/xnjbepoe" method="POST" id="contact-form">
+            <div>
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div>
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+            </div>
+            <div>
+              <label for="phone">Phone Number <span style="font-weight:400;color:var(--text-dim)">(optional)</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" />
+            </div>
+            <div>
+              <label for="properties">How many properties do you manage?</label>
+              <select id="properties" name="properties">
+                <option value="">Select...</option>
+                <option>1–5</option>
+                <option>6–15</option>
+                <option>16–50</option>
+                <option>50+</option>
+              </select>
+            </div>
+            <div>
+              <label for="message">Anything else you'd like us to know?</label>
+              <textarea id="message" name="message" placeholder="Tell us about your properties, current setup, or any questions you have..."></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+            <p class="form-note">We respect your privacy and will never share your information.</p>
+          </form>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-copy"
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 <a href="https://www.919solutions.com" target="_blank" rel="noopener" style="color: #2563eb;">919 IT Solutions</a>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Show success message after Formspree redirect
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+</html>
