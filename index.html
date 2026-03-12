@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lighthouse — Internet Monitoring for Vacation Rentals</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 150'%3E%3Crect width='112' height='150' fill='%230f1318'/%3E%3Cpath d='M42,122 L50,30 L62,30 L70,122 Z' fill='none' stroke='%2329abe2' stroke-width='3'/%3E%3Crect x='44' y='26' width='24' height='5' fill='none' stroke='%2329abe2' stroke-width='2.5' rx='1'/%3E%3Cline x1='44' y1='26' x2='44' y2='21' stroke='%2329abe2' stroke-width='1.5'/%3E%3Cline x1='52' y1='26' x2='52' y2='21' stroke='%2329abe2' stroke-width='1.5'/%3E%3Cline x1='60' y1='26' x2='60' y2='21' stroke='%2329abe2' stroke-width='1.5'/%3E%3Cline x1='68' y1='26' x2='68' y2='21' stroke='%2329abe2' stroke-width='1.5'/%3E%3Cline x1='44' y1='21' x2='68' y2='21' stroke='%2329abe2' stroke-width='1.5'/%3E%3Crect x='46' y='10' width='20' height='12' fill='none' stroke='%2329abe2' stroke-width='2.5' rx='1.5'/%3E%3Cpath d='M46,10 Q56,2 66,10' fill='none' stroke='%2329abe2' stroke-width='2.5'/%3E%3Ccircle cx='56' cy='16' r='3' fill='%2329abe2' opacity='0.3'/%3E%3Ccircle cx='56' cy='16' r='1.5' fill='%23fbbf24'/%3E%3Crect x='36' y='122' width='40' height='6' fill='none' stroke='%2329abe2' stroke-width='2.5' rx='1'/%3E%3C/svg%3E" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9F2LPTD1D"></script>
   <script>
@@ -140,7 +141,8 @@
       background: #fff; border: 1px solid var(--border);
       border-radius: 12px; padding: 28px;
     }
-    .problem-card .icon { font-size: 28px; margin-bottom: 12px; }
+    .icon { margin-bottom: 12px; color: var(--blue); }
+    .icon i { width: 28px; height: 28px; }
     .problem-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
     .problem-card p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
 
@@ -173,8 +175,9 @@
     .feature-icon {
       width: 44px; height: 44px; border-radius: 10px;
       background: var(--blue-light); display: flex; align-items: center;
-      justify-content: center; font-size: 20px; margin-bottom: 16px;
+      justify-content: center; margin-bottom: 16px; color: var(--blue);
     }
+    .feature-icon i { width: 22px; height: 22px; }
     .feature h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
     .feature p { font-size: 14px; color: var(--text-mid); line-height: 1.6; }
 
@@ -283,16 +286,17 @@
         <text x="158" y="99" font-family="Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#4a5568">919 IT SOLUTIONS</text>
       </svg>
     </a>
-    <a class="nav-cta" href="#pilot">Join the Pilot</a>
+    <a class="nav-cta" href="#pilot">Try It Free</a>
   </nav>
 
   <!-- Hero -->
   <div class="hero">
     <div class="hero-eyebrow">Now Accepting Pilot Properties</div>
     <h1>Your Guests Always Have<br><span>Fast, Reliable WiFi</span></h1>
-    <p>Lighthouse monitors your vacation rental's internet 24/7 and automatically fixes outages — before your guests even notice.</p>
+    <p>Lighthouse monitors your short-term rental's internet 24/7 — over its own cellular connection — and fixes outages before your guests even notice. Real people. Real monitoring. Real peace of mind.</p>
+    <div style="font-size: 20px; font-weight: 700; color: var(--blue); margin: -16px 0 32px; font-style: italic;">"We fix it before they feel it."</div>
     <div class="hero-actions">
-      <a class="btn-primary" href="#pilot">Join the Free Pilot</a>
+      <a class="btn-primary" href="#pilot">Try It Free for 90 Days</a>
       <a class="btn-secondary" href="#how-it-works">See How It Works</a>
     </div>
   </div>
@@ -302,20 +306,20 @@
     <div class="container">
       <div class="section-label">The Problem</div>
       <h2 class="section-title">WiFi Outages Are Costing You</h2>
-      <p class="section-sub">Internet issues are one of the top complaints in vacation rental reviews — and most of the time, a simple router reboot would have fixed it.</p>
+      <p class="section-sub">Internet issues are one of the top complaints in short-term rental reviews — and most of the time, a simple router reboot would have fixed it.</p>
       <div class="problem-grid">
         <div class="problem-card">
-          <div class="icon">⭐</div>
+          <div class="icon"><i data-lucide="star-off"></i></div>
           <h3>Bad Reviews</h3>
           <p>"WiFi didn't work all weekend" is a 1-star review waiting to happen — even if everything else about your property is perfect.</p>
         </div>
         <div class="problem-card">
-          <div class="icon">📞</div>
+          <div class="icon"><i data-lucide="phone-missed"></i></div>
           <h3>Late-Night Calls</h3>
           <p>Guests call you at 11pm to report the internet is down. You talk them through a router reboot — again.</p>
         </div>
         <div class="problem-card">
-          <div class="icon">🚗</div>
+          <div class="icon"><i data-lucide="car"></i></div>
           <h3>Unnecessary Visits</h3>
           <p>You drive out to the property to find the modem needed a 30-second power cycle. An hour of your time, wasted.</p>
         </div>
@@ -347,8 +351,8 @@
         </div>
         <div class="step">
           <div class="step-num">4</div>
-          <h3>You Stay Informed</h3>
-          <p>You get an alert when something happens and a dashboard to see the status of all your properties at a glance.</p>
+          <h3>You Get the All-Clear</h3>
+          <p>You receive a notification that an outage occurred — and another one minutes later confirming it's been resolved. No calls, no driving out, no stress.</p>
         </div>
       </div>
     </div>
@@ -359,35 +363,40 @@
     <div class="container">
       <div class="section-label">Features</div>
       <h2 class="section-title">Everything You Need, Nothing You Don't</h2>
-      <p class="section-sub">Built specifically for vacation rental property managers.</p>
+      <p class="section-sub">Built specifically for short-term rental property managers.</p>
       <div class="features-grid">
+        <div class="feature" style="background: var(--blue-light);">
+          <div class="feature-icon"><i data-lucide="signal"></i></div>
+          <h3>Always connected, even when your internet isn't</h3>
+          <p>Most wifi monitors go silent the moment your internet goes down — they can't alert you until it comes back. Lighthouse has its own built-in cellular connection, completely independent of your property's internet. We know the moment something goes wrong, and we're already fixing it.</p>
+        </div>
+        <div class="feature" style="background: var(--blue-light);">
+          <div class="feature-icon"><i data-lucide="users"></i></div>
+          <h3>Human Monitoring</h3>
+          <p>This isn't just a smart plug. Our team actively monitors your property and can log in remotely over the cellular connection to diagnose problems — even when your internet is completely down. If something unusual is happening, a real person is looking at it.</p>
+        </div>
         <div class="feature">
-          <div class="feature-icon">⚡</div>
+          <div class="feature-icon"><i data-lucide="refresh-cw"></i></div>
           <h3>Automatic Power Cycling</h3>
           <p>Detects outages and reboots your modem and router automatically — typically restoring service within 3 minutes.</p>
         </div>
         <div class="feature">
-          <div class="feature-icon">🔔</div>
+          <div class="feature-icon"><i data-lucide="bell"></i></div>
           <h3>Instant Alerts</h3>
           <p>Get notified by email the moment an issue is detected at any of your properties, with details on what happened.</p>
         </div>
         <div class="feature">
-          <div class="feature-icon">📡</div>
+          <div class="feature-icon"><i data-lucide="wifi-off"></i></div>
           <h3>Works Offline</h3>
           <p>Zigbee-based smart plug control works even when the internet is down, so Lighthouse can fix the very problem it detects.</p>
         </div>
         <div class="feature">
-          <div class="feature-icon">📶</div>
-          <h3>Always Reachable via LTE</h3>
-          <p>The Lighthouse device has its own built-in cellular connection — completely separate from your property's internet. Even during a total outage, Lighthouse stays in contact with our servers so monitoring, alerts, and remote diagnostics never go dark. <em>This connection is for the Lighthouse device only, not for your guests.</em></p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🔒</div>
+          <div class="feature-icon"><i data-lucide="shield"></i></div>
           <h3>Secure by Design</h3>
           <p>All devices connect over an encrypted private network. Your property data never touches the public internet.</p>
         </div>
         <div class="feature">
-          <div class="feature-icon">📦</div>
+          <div class="feature-icon"><i data-lucide="settings"></i></div>
           <h3>Fully Managed</h3>
           <p>We handle setup, updates, and maintenance. If something needs attention, we know before you do.</p>
         </div>
@@ -399,35 +408,35 @@
   <section id="pilot" style="background: var(--bg);">
     <div class="container">
       <div class="section-label">Pilot Program</div>
-      <h2 class="section-title">Try It Free for 3 Months</h2>
-      <p class="section-sub">We're looking for a small number of Oak Island and Southport property owners to pilot Lighthouse at no cost. Here's exactly what that means:</p>
+      <h2 class="section-title">Try It Free for 90 Days</h2>
+      <p class="section-sub">We're looking for a small number of short-term rental property owners to try Lighthouse at no cost. Here's exactly what that means:</p>
       <div class="problem-grid">
         <div class="problem-card" style="border-color: var(--blue); border-width: 2px;">
-          <div class="icon">📦</div>
+          <div class="icon"><i data-lucide="package"></i></div>
           <h3>We Ship Everything</h3>
           <p>We'll send you the Lighthouse device pre-configured. All you do is plug it in near your modem — no technician visit required.</p>
         </div>
         <div class="problem-card" style="border-color: var(--blue); border-width: 2px;">
-          <div class="icon">💰</div>
+          <div class="icon"><i data-lucide="badge-cent"></i></div>
           <h3>Completely Free for 3 Months</h3>
           <p>No credit card, no commitment. The full Lighthouse service — hardware, monitoring, and automatic fixes — at zero cost during the pilot.</p>
         </div>
         <div class="problem-card" style="border-color: var(--blue); border-width: 2px;">
-          <div class="icon">🚚</div>
+          <div class="icon"><i data-lucide="shield-check"></i></div>
           <h3>No Risk</h3>
           <p>If Lighthouse isn't right for you, just let us know. We'll send a return shipping label and you ship the device back — no questions asked.</p>
         </div>
       </div>
       <div style="text-align: center; margin-top: 48px;">
         <a class="btn-primary" href="#contact" style="font-size: 16px; padding: 16px 36px;">Apply for the Pilot Program</a>
-        <p style="margin-top: 16px; font-size: 13px; color: var(--text-dim);">Limited spots available. Oak Island and Southport, NC properties only at this time.</p>
+        <p style="margin-top: 16px; font-size: 13px; color: var(--text-dim);">Limited spots available.</p>
       </div>
     </div>
   </section>
 
   <!-- Pull quote -->
   <div class="proof">
-    <p>"Most WiFi outages at vacation rentals are caused by a modem or router that just needs a reboot.<br><span>Lighthouse detects it and fixes it automatically — so you don't have to."</span></p>
+    <p>We fix it before they feel it.</p>
   </div>
 
   <!-- Contact -->
@@ -437,7 +446,7 @@
         <div class="contact-info">
           <div class="section-label">Get in Touch</div>
           <h2>Interested in the Pilot Program?</h2>
-          <p>We're currently working with a small number of property managers to pilot Lighthouse. If you manage vacation rentals and want to eliminate WiFi complaints, we'd love to talk.</p>
+          <p>We're currently working with a small number of property managers to pilot Lighthouse. If you manage short-term rentals and want to eliminate WiFi complaints, we'd love to talk.</p>
           <p>Fill out the form and we'll get back to you within one business day.</p>
           <div class="contact-detail">
             <strong>919 IT Solutions</strong>
@@ -498,6 +507,8 @@
   </footer>
 
   <script>
+    lucide.createIcons();
+
     // Show success message after Formspree redirect
     const form = document.getElementById('contact-form');
     form.addEventListener('submit', async function(e) {
