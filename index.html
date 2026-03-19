@@ -551,14 +551,15 @@
       .features-grid { grid-template-columns: 1fr 1fr; }
       .wifi-inner { grid-template-columns: 1fr; gap: 36px; }
     }
+    .hiw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
     @media (max-width: 700px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .hero { padding: 72px 20px 72px; }
-      .stats-inner { gap: 28px; }
       .problem-cards { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; gap: 40px; }
       .features-grid { grid-template-columns: 1fr; }
+      .hiw-grid { grid-template-columns: 1fr; gap: 36px; }
     }
   </style>
 </head>
@@ -645,7 +646,7 @@
 <!-- How it works -->
 <section class="section" id="how-it-works">
   <div class="wrap-wide">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
+    <div class="hiw-grid">
       <div>
         <div class="section-tag">How It Works</div>
         <h2>Autonomous monitoring with human oversight</h2>
