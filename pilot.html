@@ -46,17 +46,7 @@
       align-items: center;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .logo svg { flex-shrink: 0; }
-    .logo span { color: var(--blue); }
+    .logo { text-decoration: none; display: block; }
 
     /* Page layout */
     .page {
@@ -284,12 +274,22 @@
 
 <nav>
   <a href="https://lighthouse.919solutions.com" class="logo">
-    <svg width="28" height="36" viewBox="0 0 112 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M42,122 L50,30 L62,30 L70,122 Z" fill="none" stroke="#29abe2" stroke-width="6"/>
-      <rect x="44" y="26" width="24" height="5" fill="none" stroke="#29abe2" stroke-width="5" rx="1"/>
-      <circle cx="56" cy="16" r="4" fill="#fbbf24"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 150" width="200" height="63">
+      <g opacity="0.12"><path d="M55 28 L0 5 L55 28" fill="#29abe2"/><path d="M55 28 L110 5 L55 28" fill="#29abe2"/><path d="M55 28 L18 0 L55 28" fill="#29abe2"/><path d="M55 28 L92 0 L55 28" fill="#29abe2"/></g>
+      <path d="M42,122 L50,30 L62,30 L70,122 Z" fill="none" stroke="#29abe2" stroke-width="2" stroke-linejoin="round"/>
+      <rect x="44" y="26" width="24" height="5" fill="none" stroke="#29abe2" stroke-width="2" rx="1"/>
+      <line x1="44" y1="26" x2="44" y2="21" stroke="#29abe2" stroke-width="1.5"/><line x1="52" y1="26" x2="52" y2="21" stroke="#29abe2" stroke-width="1.5"/><line x1="60" y1="26" x2="60" y2="21" stroke="#29abe2" stroke-width="1.5"/><line x1="68" y1="26" x2="68" y2="21" stroke="#29abe2" stroke-width="1.5"/>
+      <line x1="44" y1="21" x2="68" y2="21" stroke="#29abe2" stroke-width="1.5"/>
+      <rect x="46" y="10" width="20" height="12" fill="none" stroke="#29abe2" stroke-width="2" rx="1.5"/>
+      <path d="M46,10 Q56,2 66,10" fill="none" stroke="#29abe2" stroke-width="2"/>
+      <circle cx="56" cy="16" r="1.5" fill="#fbbf24"/>
+      <rect x="36" y="122" width="40" height="6" fill="none" stroke="#29abe2" stroke-width="2" rx="1"/>
+      <line x1="118" y1="18" x2="118" y2="132" stroke="#cbd5e0" stroke-width="1.5"/>
+      <text x="138" y="74" font-family="Georgia, serif" font-size="42" font-weight="700" letter-spacing="2" fill="#1a2433">LIGHTHOUSE</text>
+      <line x1="138" y1="82" x2="472" y2="82" stroke="#29abe2" stroke-width="1.5" opacity="0.4"/>
+      <text x="140" y="99" font-family="Georgia, serif" font-size="10" font-style="italic" fill="#29abe2">by</text>
+      <text x="158" y="99" font-family="Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#4a5568">919 IT SOLUTIONS</text>
     </svg>
-    Light<span>house</span>
   </a>
 </nav>
 
@@ -297,12 +297,6 @@
 
   <div class="pill">Pilot Program</div>
   <h1>Join the Lighthouse Pilot</h1>
-  <p class="subtitle">
-    Get early access to Lighthouse — 24/7 internet monitoring for your short-term rental.
-    We'll install a device at your property and you'll have full visibility into your
-    connection from day one. No cost during the pilot.
-  </p>
-
   <div class="card" id="form-card">
     <div class="card-title">Your Information</div>
     <form id="pilot-form" novalidate>
