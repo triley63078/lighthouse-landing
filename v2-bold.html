@@ -4,8 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lighthouse — 24/7 Internet Monitoring for Short-Term Rentals</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 150'%3E%3Crect width='112' height='150' fill='%23ffffff'/%3E%3Cpath d='M42,122 L50,30 L62,30 L70,122 Z' fill='none' stroke='%2329abe2' stroke-width='3'/%3E%3Crect x='44' y='26' width='24' height='5' fill='none' stroke='%2329abe2' stroke-width='2.5' rx='1'/%3E%3Ccircle cx='56' cy='16' r='1.5' fill='%23fbbf24'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 150'%3E%3Crect width='112' height='150' fill='%230a0f14'/%3E%3Cpath d='M42,122 L50,30 L62,30 L70,122 Z' fill='none' stroke='%2329abe2' stroke-width='3'/%3E%3Crect x='44' y='26' width='24' height='5' fill='none' stroke='%2329abe2' stroke-width='2.5' rx='1'/%3E%3Ccircle cx='56' cy='16' r='1.5' fill='%23fbbf24'/%3E%3C/svg%3E" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9F2LPTD1D"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,18 +18,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:         #ffffff;
-      --bg2:        #f5f9fc;
-      --bg3:        #eaf4fb;
-      --blue:       #29abe2;
-      --blue-dark:  #1a8bbf;
-      --blue-glow:  rgba(41, 171, 226, 0.25);
-      --blue-dim:   rgba(41, 171, 226, 0.08);
-      --text:       #1a2433;
-      --text-mid:   #4a5568;
-      --text-dim:   #9dafc0;
-      --border:     rgba(41, 171, 226, 0.25);
-      --border-dim: #e2e8f0;
+      --bg: #0a0f14;
+      --bg2: #0f1620;
+      --bg3: #141d28;
+      --blue: #29abe2;
+      --blue-glow: rgba(41, 171, 226, 0.35);
+      --blue-dim: rgba(41, 171, 226, 0.12);
+      --text: #f0f4f8;
+      --text-mid: #8da0b3;
+      --text-dim: #4a6070;
+      --border: rgba(41, 171, 226, 0.15);
+      --border-dim: rgba(255,255,255,0.06);
     }
 
     html { scroll-behavior: smooth; }
@@ -42,20 +42,20 @@
     }
 
     a { color: var(--blue); text-decoration: none; }
-    a:hover { color: var(--blue-dark); }
+    a:hover { color: #4fc3f7; }
 
     /* Announcement bar */
     .announce {
-      background: linear-gradient(90deg, #1a8bbf 0%, #29abe2 50%, #1a8bbf 100%);
-      color: #fff;
+      background: linear-gradient(90deg, rgba(41,171,226,0.12) 0%, rgba(41,171,226,0.18) 50%, rgba(41,171,226,0.12) 100%);
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
       text-align: center;
       padding: 11px 20px;
       font-size: 13px;
-      font-weight: 500;
     }
     .announce-pill {
-      background: rgba(255,255,255,0.25);
-      color: #fff;
+      background: var(--blue);
+      color: var(--bg);
       font-size: 10px;
       font-weight: 800;
       letter-spacing: 0.1em;
@@ -64,40 +64,43 @@
       border-radius: 999px;
       margin-right: 8px;
     }
-    .announce a { color: #fff; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
-    .announce a:hover { opacity: 0.85; color: #fff; }
+    .announce a { color: var(--blue); font-weight: 600; }
+    .announce a:hover { color: #4fc3f7; }
 
     /* Nav */
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.92);
+      background: rgba(10, 15, 20, 0.9);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-dim);
       padding: 0 40px;
-      height: 96px;
+      height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links a { font-size: 14px; color: var(--text-mid); font-weight: 500; }
+    .nav-links a {
+      font-size: 14px;
+      color: var(--text-mid);
+      font-weight: 450;
+    }
     .nav-links a:hover { color: var(--text); }
     .nav-cta {
       background: var(--blue);
-      color: #fff !important;
+      color: var(--bg) !important;
       padding: 8px 18px;
       border-radius: 6px;
       font-size: 13px;
       font-weight: 700;
-      box-shadow: 0 4px 14px var(--blue-glow);
-      transition: box-shadow 0.2s, transform 0.15s;
+      box-shadow: 0 0 16px var(--blue-glow);
+      transition: box-shadow 0.2s;
     }
     .nav-cta:hover {
-      color: #fff !important;
-      box-shadow: 0 6px 24px rgba(41,171,226,0.4);
-      transform: translateY(-1px);
+      color: var(--bg) !important;
+      box-shadow: 0 0 28px var(--blue-glow);
     }
 
     /* Layout */
@@ -109,17 +112,17 @@
       position: relative;
       padding: 120px 24px 100px;
       text-align: center;
-      max-width: 860px;
+      max-width: 800px;
       margin: 0 auto;
       overflow: hidden;
     }
     .hero::before {
       content: '';
       position: absolute;
-      top: -60px; left: 50%;
+      top: 0; left: 50%;
       transform: translateX(-50%);
-      width: 700px; height: 500px;
-      background: radial-gradient(ellipse at 50% 0%, rgba(41,171,226,0.1) 0%, transparent 68%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(41,171,226,0.18) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-eyebrow {
@@ -128,7 +131,7 @@
       gap: 8px;
       border: 1px solid var(--border);
       border-radius: 999px;
-      padding: 5px 16px;
+      padding: 5px 14px;
       font-size: 12px;
       font-weight: 600;
       color: var(--blue);
@@ -143,7 +146,7 @@
       letter-spacing: -0.04em;
       line-height: 1.06;
       margin-bottom: 24px;
-      background: linear-gradient(135deg, #1a2433 0%, #29abe2 70%, #1a8bbf 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #29abe2 60%, #1a8bbf 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -158,20 +161,20 @@
     .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn-glow {
       background: var(--blue);
-      color: #fff;
+      color: var(--bg);
       padding: 14px 32px;
       border-radius: 8px;
       font-size: 15px;
       font-weight: 700;
       letter-spacing: -0.01em;
-      box-shadow: 0 6px 24px var(--blue-glow);
+      box-shadow: 0 0 30px var(--blue-glow);
       transition: box-shadow 0.2s, transform 0.15s;
       display: inline-block;
     }
     .btn-glow:hover {
-      color: #fff;
-      box-shadow: 0 8px 36px rgba(41,171,226,0.45);
-      transform: translateY(-2px);
+      color: var(--bg);
+      box-shadow: 0 0 50px rgba(41,171,226,0.5);
+      transform: translateY(-1px);
     }
     .btn-outline {
       background: transparent;
@@ -184,8 +187,34 @@
       transition: border-color 0.15s, color 0.15s;
       display: inline-block;
     }
-    .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+    .btn-outline:hover {
+      border-color: var(--border);
+      color: var(--text);
+    }
 
+    /* Stats bar */
+    .stats-bar {
+      border-top: 1px solid var(--border-dim);
+      border-bottom: 1px solid var(--border-dim);
+      padding: 28px 24px;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+    .stats-inner {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-val {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--blue);
+      filter: drop-shadow(0 0 8px rgba(41,171,226,0.4));
+    }
+    .stat-label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 2px; }
 
     /* Section base */
     .section { padding: 88px 0; }
@@ -202,7 +231,6 @@
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.15;
-      color: var(--text);
       margin-bottom: 16px;
     }
     .section p {
@@ -220,16 +248,13 @@
       margin-top: 40px;
     }
     .problem-card {
-      background: var(--bg);
+      background: var(--bg2);
       border: 1px solid var(--border-dim);
       border-radius: 12px;
       padding: 28px 24px;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.2s;
     }
-    .problem-card:hover {
-      border-color: var(--border);
-      box-shadow: 0 4px 24px var(--blue-glow);
-    }
+    .problem-card:hover { border-color: var(--border); }
     .problem-card-icon {
       width: 40px; height: 40px;
       background: var(--blue-dim);
@@ -240,17 +265,17 @@
       color: var(--blue);
       margin-bottom: 16px;
     }
-    .problem-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+    .problem-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
     .problem-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
 
-    /* Timeline */
+    /* Timeline / how it works */
     .timeline { margin-top: 48px; position: relative; }
     .timeline::before {
       content: '';
       position: absolute;
       left: 19px; top: 0; bottom: 0;
       width: 1px;
-      background: linear-gradient(to bottom, var(--blue-dim), transparent);
+      background: linear-gradient(to bottom, var(--blue-dim), var(--blue-dim));
     }
     .timeline-item {
       display: flex;
@@ -262,18 +287,18 @@
     .timeline-dot {
       width: 40px; height: 40px;
       border-radius: 50%;
-      background: var(--bg);
+      background: var(--bg3);
       border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       color: var(--blue);
-      box-shadow: 0 4px 16px var(--blue-glow);
+      box-shadow: 0 0 14px var(--blue-glow);
       z-index: 1;
     }
     .timeline-content { padding-top: 8px; }
-    .timeline-content h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .timeline-content h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
     .timeline-content p { font-size: 14px; color: var(--text-mid); margin: 0; line-height: 1.65; }
 
     /* Features */
@@ -288,7 +313,7 @@
       margin-top: 40px;
     }
     .feature-cell {
-      background: var(--bg);
+      background: var(--bg2);
       padding: 30px 26px;
       transition: background 0.2s;
     }
@@ -297,11 +322,12 @@
       color: var(--blue);
       margin-bottom: 14px;
       display: block;
+      filter: drop-shadow(0 0 6px rgba(41,171,226,0.4));
     }
-    .feature-cell h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .feature-cell h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
     .feature-cell p { font-size: 13px; color: var(--text-mid); margin: 0; line-height: 1.6; }
 
-    /* WiFi section */
+    /* WiFi page section */
     .wifi-section { padding: 88px 0; }
     .wifi-inner {
       display: grid;
@@ -325,19 +351,19 @@
     }
     .wifi-example-link:hover {
       color: var(--blue);
-      background: rgba(41,171,226,0.14);
-      box-shadow: 0 4px 16px var(--blue-glow);
+      background: rgba(41,171,226,0.18);
+      box-shadow: 0 0 16px var(--blue-glow);
     }
 
-    /* Browser mockup */
+    /* Browser mockup dark */
     .browser-mock {
-      border: 1px solid var(--border-dim);
+      border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 12px 48px rgba(41,171,226,0.12), 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 0 60px rgba(41,171,226,0.12), 0 0 120px rgba(41,171,226,0.06);
     }
     .browser-bar {
-      background: #f1f5f9;
+      background: var(--bg3);
       border-bottom: 1px solid var(--border-dim);
       padding: 11px 16px;
       display: flex;
@@ -350,7 +376,7 @@
     .dot-yellow { background: #febc2e; }
     .dot-green { background: #28c840; }
     .browser-url {
-      background: #fff;
+      background: var(--bg2);
       border: 1px solid var(--border-dim);
       border-radius: 5px;
       padding: 4px 12px;
@@ -358,7 +384,7 @@
       color: var(--text-dim);
       flex: 1;
     }
-    .browser-content { padding: 24px; background: var(--bg); }
+    .browser-content { padding: 24px; background: var(--bg2); }
     .mock-header {
       display: flex;
       justify-content: space-between;
@@ -368,29 +394,33 @@
     .mock-title { font-size: 15px; font-weight: 700; color: var(--text); }
     .mock-sub { font-size: 11px; color: var(--text-dim); margin-top: 2px; }
     .mock-badge {
-      font-size: 11px; font-weight: 700;
-      background: #f0fdf4; color: #16a34a;
-      border: 1px solid #bbf7d0;
-      padding: 3px 10px; border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      background: rgba(52,211,153,0.15);
+      color: #34d399;
+      border: 1px solid rgba(52,211,153,0.3);
+      padding: 3px 10px;
+      border-radius: 999px;
     }
     .mock-stats {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
+      gap: 12px;
       margin-bottom: 20px;
     }
     .mock-stat {
-      background: var(--bg2);
+      background: var(--bg3);
       border: 1px solid var(--border-dim);
       border-radius: 8px;
       padding: 12px;
       text-align: center;
     }
     .mock-stat-val {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 800;
       color: var(--blue);
       letter-spacing: -0.02em;
+      filter: drop-shadow(0 0 6px rgba(41,171,226,0.4));
     }
     .mock-stat-lbl {
       font-size: 10px;
@@ -402,91 +432,63 @@
 
     /* Pricing */
     .pricing-section { padding: 88px 0; text-align: center; }
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 48px;
-      align-items: start;
-    }
-    @media (max-width: 860px) { .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } }
     .price-card {
-      background: var(--bg);
-      border: 1px solid var(--border-dim);
+      max-width: 400px;
+      margin: 44px auto 0;
+      background: var(--bg2);
+      border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 32px 28px;
+      padding: 40px;
       text-align: left;
+      box-shadow: 0 0 40px rgba(41,171,226,0.08);
       position: relative;
       overflow: hidden;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .price-card:hover { box-shadow: 0 8px 32px var(--blue-glow); transform: translateY(-2px); }
-    .price-card.featured {
-      border-color: var(--blue);
-      box-shadow: 0 8px 40px var(--blue-glow);
     }
     .price-card::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--border-dim);
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--blue) 50%, transparent 100%);
     }
-    .price-card.featured::before {
-      background: linear-gradient(90deg, var(--blue-dark) 0%, var(--blue) 50%, #4dc3f0 100%);
-    }
-    .price-badge {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: var(--blue);
-      color: #fff;
-      padding: 3px 10px;
-      border-radius: 999px;
-      margin-bottom: 16px;
-    }
-    .price-tier { font-size: 13px; font-weight: 700; color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
     .price-amount {
-      font-size: 44px;
+      font-size: 56px;
       font-weight: 800;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.05em;
       line-height: 1;
       color: var(--text);
       margin-bottom: 4px;
     }
-    .price-amount span { font-size: 17px; font-weight: 500; color: var(--text-mid); letter-spacing: 0; }
-    .price-sub { font-size: 12px; color: var(--text-dim); margin-bottom: 20px; }
-    .price-features { list-style: none; margin-bottom: 24px; }
+    .price-amount span { font-size: 20px; font-weight: 500; color: var(--text-mid); letter-spacing: 0; }
+    .price-sub { font-size: 13px; color: var(--text-dim); margin-bottom: 28px; }
+    .price-features { list-style: none; margin-bottom: 28px; }
     .price-features li {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-mid);
-      padding: 9px 0;
+      padding: 8px 0;
       border-bottom: 1px solid var(--border-dim);
       display: flex;
       align-items: center;
       gap: 10px;
     }
     .price-features li:last-child { border-bottom: none; }
-    .price-features li i { color: var(--blue); flex-shrink: 0; }
+    .price-features li i { color: var(--blue); flex-shrink: 0; filter: drop-shadow(0 0 4px rgba(41,171,226,0.5)); }
     .btn-full {
       display: block;
       width: 100%;
       background: var(--blue);
-      color: #fff;
+      color: var(--bg);
       text-align: center;
       padding: 14px;
       border-radius: 8px;
       font-size: 15px;
       font-weight: 700;
-      transition: box-shadow 0.2s, transform 0.15s;
-      box-shadow: 0 6px 20px var(--blue-glow);
+      transition: box-shadow 0.2s;
+      box-shadow: 0 0 20px var(--blue-glow);
     }
     .btn-full:hover {
-      color: #fff;
-      box-shadow: 0 8px 32px rgba(41,171,226,0.4);
-      transform: translateY(-1px);
+      color: var(--bg);
+      box-shadow: 0 0 40px rgba(41,171,226,0.5);
     }
 
     /* Contact */
@@ -515,25 +517,27 @@
       border-radius: 7px;
       font-size: 14px;
       color: var(--text);
-      background: var(--bg);
+      background: var(--bg2);
       outline: none;
       transition: border-color 0.15s, box-shadow 0.15s;
+      -webkit-appearance: none;
     }
     .form-group input:focus, .form-group select:focus {
       border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(41,171,226,0.1);
+      box-shadow: 0 0 0 3px rgba(41,171,226,0.12);
     }
     .form-group input::placeholder { color: var(--text-dim); }
+    .form-group select option { background: var(--bg2); color: var(--text); }
     .form-note { font-size: 12px; color: var(--text-dim); margin-top: 12px; }
     .form-success {
       display: none;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
+      background: rgba(52,211,153,0.08);
+      border: 1px solid rgba(52,211,153,0.25);
       border-radius: 10px;
       padding: 24px;
       text-align: center;
       font-size: 15px;
-      color: #16a34a;
+      color: #34d399;
     }
 
     /* Footer */
@@ -545,21 +549,28 @@
       color: var(--text-dim);
     }
 
+    /* Divider */
+    .glow-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--blue-glow) 50%, transparent 100%);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .problem-cards { grid-template-columns: 1fr 1fr; }
       .features-grid { grid-template-columns: 1fr 1fr; }
       .wifi-inner { grid-template-columns: 1fr; gap: 36px; }
     }
-    .hiw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
     @media (max-width: 700px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .hero { padding: 72px 20px 72px; }
+      .stats-inner { gap: 28px; }
       .problem-cards { grid-template-columns: 1fr; }
       .contact-inner { grid-template-columns: 1fr; gap: 40px; }
       .features-grid { grid-template-columns: 1fr; }
-      .hiw-grid { grid-template-columns: 1fr; gap: 36px; }
     }
   </style>
 </head>
@@ -574,7 +585,7 @@
 
 <!-- Nav -->
 <nav>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 150" width="260" height="81">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 150" width="160" height="50">
     <g opacity="0.12"><path d="M55 28 L0 5 L55 28" fill="#29abe2"/><path d="M55 28 L110 5 L55 28" fill="#29abe2"/><path d="M55 28 L18 0 L55 28" fill="#29abe2"/><path d="M55 28 L92 0 L55 28" fill="#29abe2"/></g>
     <path d="M42,122 L50,30 L62,30 L70,122 Z" fill="none" stroke="#29abe2" stroke-width="2" stroke-linejoin="round"/>
     <rect x="44" y="26" width="24" height="5" fill="none" stroke="#29abe2" stroke-width="2" rx="1"/>
@@ -584,14 +595,13 @@
     <path d="M46,10 Q56,2 66,10" fill="none" stroke="#29abe2" stroke-width="2"/>
     <circle cx="56" cy="16" r="1.5" fill="#fbbf24"/>
     <rect x="36" y="122" width="40" height="6" fill="none" stroke="#29abe2" stroke-width="2" rx="1"/>
-    <line x1="118" y1="18" x2="118" y2="132" stroke="#cbd5e0" stroke-width="1.5"/>
-    <text x="138" y="74" font-family="Georgia, serif" font-size="42" font-weight="700" letter-spacing="2" fill="#1a2433">LIGHTHOUSE</text>
+    <line x1="118" y1="18" x2="118" y2="132" stroke="#2d3748" stroke-width="1.5"/>
+    <text x="138" y="74" font-family="Georgia, serif" font-size="42" font-weight="700" letter-spacing="2" fill="#f0f4f8">LIGHTHOUSE</text>
     <line x1="138" y1="82" x2="472" y2="82" stroke="#29abe2" stroke-width="1.5" opacity="0.4"/>
     <text x="140" y="99" font-family="Georgia, serif" font-size="10" font-style="italic" fill="#29abe2">by</text>
-    <text x="158" y="99" font-family="Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#4a5568">919 IT SOLUTIONS</text>
+    <text x="158" y="99" font-family="Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#8da0b3">919 IT SOLUTIONS</text>
   </svg>
   <div class="nav-links">
-    <a href="#problem">Why Lighthouse?</a>
     <a href="#how-it-works">How it works</a>
     <a href="#features">Features</a>
     <a href="#wifi-page">WiFi Performance Page</a>
@@ -603,25 +613,48 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-eyebrow">
-    <i data-lucide="radio"></i>
+    <i data-lucide="radio" ></i>
     24/7 Internet Monitoring for Short-Term Rentals
   </div>
   <h1>Always Watching.<br>Always On.</h1>
   <p class="hero-sub">Lighthouse guards your rental's internet over its own cellular link. When it drops, we automatically heal the connection — quickly, before guests notice a thing.</p>
   <div class="hero-actions">
-    <a href="#contact" class="btn-glow">Join the free pilot</a>
+    <a href="#contact" class="btn-glow">Join the pilot</a>
     <a href="#how-it-works" class="btn-outline">See how it works</a>
   </div>
 </section>
 
+<!-- Stats -->
+<div style="padding: 0 24px 80px;">
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-val">99.8%</div>
+        <div class="stat-label">avg uptime</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">Fast</div>
+        <div class="stat-label">avg recovery time</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">24/7</div>
+        <div class="stat-label">cellular monitoring</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">$39</div>
+        <div class="stat-label">per property/mo</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Problem -->
-<section class="section" id="problem" style="background: var(--bg2);">
+<section class="section" id="problem">
   <div class="wrap-wide">
-    <div style="text-align:center;">
+    <div class="wrap" style="padding:0;">
       <div class="section-tag">The Problem</div>
-      <h2 style="text-align:center;">WiFi problems destroy<br>5-star ratings</h2>
-      <p style="text-align:center;">Most internet failures are a simple reboot. But by the time you find out, the damage is already done.</p>
+      <h2>WiFi problems destroy<br>5-star ratings</h2>
+      <p>Most internet failures are a simple reboot. But by the time you find out, the damage is already done.</p>
     </div>
     <div class="problem-cards">
       <div class="problem-card">
@@ -644,9 +677,9 @@
 </section>
 
 <!-- How it works -->
-<section class="section" id="how-it-works">
+<section class="section" id="how-it-works" style="background:var(--bg2); padding: 88px 0;">
   <div class="wrap-wide">
-    <div class="hiw-grid">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;">
       <div>
         <div class="section-tag">How It Works</div>
         <h2>Autonomous monitoring with human oversight</h2>
@@ -656,8 +689,8 @@
         <div class="timeline-item">
           <div class="timeline-dot"><i data-lucide="signal" width="18" height="18"></i></div>
           <div class="timeline-content">
-            <h3>Cellular-backed monitoring</h3>
-            <p>Lighthouse uses its own cellular backup connection, which allows for alerts to be sent even when your internet is completely down. In our Fully Managed plan, it also allows our support team to remotely troubleshoot your internet outage.</p>
+            <h3>Cellular-independent monitoring</h3>
+            <p>Lighthouse uses its own LTE connection to watch your property's internet every minute — completely separate from the network it's monitoring.</p>
           </div>
         </div>
         <div class="timeline-item">
@@ -671,14 +704,14 @@
           <div class="timeline-dot"><i data-lucide="bell" width="18" height="18"></i></div>
           <div class="timeline-content">
             <h3>Alerts when detected and when fixed</h3>
-            <p>You get an alert when the outage starts and another when internet returns. No action required on your end.</p>
+            <p>You get an email when the outage starts and another when internet returns. No action required on your end.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"><i data-lucide="eye" width="18" height="18"></i></div>
           <div class="timeline-content">
             <h3>Human escalation if needed</h3>
-            <p>If auto-heal doesn't resolve it, you're notified so you can intervene. With our Fully Managed plan, our support team jumps in to diagnose the problem for you.</p>
+            <p>If auto-heal doesn't resolve it, you're notified so you can intervene. Nothing falls through the cracks.</p>
           </div>
         </div>
       </div>
@@ -687,12 +720,10 @@
 </section>
 
 <!-- Features -->
-<section class="section" id="features" style="background:var(--bg2); padding: 88px 0;">
+<section class="section" id="features">
   <div class="wrap-wide">
-    <div style="text-align:center;">
-      <div class="section-tag">Features</div>
-      <h2 style="text-align:center;">Built for properties. Runs on its own.</h2>
-    </div>
+    <div class="section-tag">Features</div>
+    <h2>Built for properties. Runs on its own.</h2>
     <div class="features-grid">
       <div class="feature-cell">
         <span class="feature-icon"><i data-lucide="signal" width="22" height="22"></i></span>
@@ -706,7 +737,7 @@
       </div>
       <div class="feature-cell">
         <span class="feature-icon"><i data-lucide="bell" width="22" height="22"></i></span>
-        <h3>Instant alerts</h3>
+        <h3>Instant email alerts</h3>
         <p>Real-time notification when an outage is detected, and again when internet is restored.</p>
       </div>
       <div class="feature-cell">
@@ -729,12 +760,12 @@
 </section>
 
 <!-- checkoutmywifi -->
-<section class="wifi-section" id="wifi-page">
+<section class="wifi-section" id="wifi-page" style="background:var(--bg2);">
   <div class="wrap-wide">
     <div class="wifi-inner">
       <div class="wifi-text">
         <div class="section-tag">checkoutmywifi.com</div>
-        <h2 style="font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:16px;">Show guests the WiFi is great — before they even ask</h2>
+        <h2>Show guests the WiFi is great — before they even ask</h2>
         <p>Every Lighthouse property gets a public page showing realtime uptime, current download/upload speeds, and 30-day history. Add the link to your listing or welcome book.</p>
         <p>Guests see live proof your WiFi is reliable. You stand apart from every other listing on the block.</p>
         <a href="https://checkoutmywifi.com/example" target="_blank" class="wifi-example-link">
@@ -775,18 +806,39 @@
               </div>
             </div>
             <svg viewBox="0 0 320 90" width="100%" style="display:block;margin-top:4px;">
-              <line x1="0" y1="22" x2="320" y2="22" stroke="#e2e8f0" stroke-width="1"/>
-              <line x1="0" y1="44" x2="320" y2="44" stroke="#e2e8f0" stroke-width="1"/>
-              <line x1="0" y1="66" x2="320" y2="66" stroke="#e2e8f0" stroke-width="1"/>
-              <path d="M0,58 C25,54 50,40 75,36 C100,32 120,42 145,38 C170,34 190,28 215,30 C240,32 265,36 285,26 C300,20 310,18 320,16" fill="none" stroke="#29abe2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M0,70 C25,67 50,63 75,61 C100,59 120,63 145,60 C170,57 190,54 215,55 C240,56 265,58 285,52 C300,48 310,46 320,44" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="blueGlow" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#29abe2" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="#29abe2" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="greenGlow" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#34d399" stop-opacity="0.2"/>
+                  <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+                </linearGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="2" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <!-- Grid lines -->
+              <line x1="0" y1="22" x2="320" y2="22" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <line x1="0" y1="44" x2="320" y2="44" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <line x1="0" y1="66" x2="320" y2="66" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <!-- Download fill -->
+              <path d="M0,58 C25,54 50,40 75,36 C100,32 120,42 145,38 C170,34 190,28 215,30 C240,32 265,36 285,26 C300,20 310,18 320,16 L320,90 L0,90 Z" fill="url(#blueGlow)"/>
+              <!-- Upload fill -->
+              <path d="M0,70 C25,67 50,63 75,61 C100,59 120,63 145,60 C170,57 190,54 215,55 C240,56 265,58 285,52 C300,48 310,46 320,44 L320,90 L0,90 Z" fill="url(#greenGlow)"/>
+              <!-- Download line -->
+              <path d="M0,58 C25,54 50,40 75,36 C100,32 120,42 145,38 C170,34 190,28 215,30 C240,32 265,36 285,26 C300,20 310,18 320,16" fill="none" stroke="#29abe2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+              <!-- Upload line -->
+              <path d="M0,70 C25,67 50,63 75,61 C100,59 120,63 145,60 C170,57 190,54 215,55 C240,56 265,58 285,52 C300,48 310,46 320,44" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
             </svg>
-            <div style="display:flex;gap:16px;margin-top:10px;">
-              <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#9ca3af;">
-                <span style="display:inline-block;width:10px;height:2px;background:#29abe2;border-radius:2px;"></span> Download
+            <div style="display:flex;gap:16px;margin-top:12px;">
+              <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-dim);">
+                <span style="display:inline-block;width:10px;height:2px;background:#29abe2;border-radius:2px;box-shadow:0 0 4px #29abe2;"></span> Download
               </div>
-              <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#9ca3af;">
-                <span style="display:inline-block;width:10px;height:2px;background:#16a34a;border-radius:2px;"></span> Upload
+              <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-dim);">
+                <span style="display:inline-block;width:10px;height:2px;background:#34d399;border-radius:2px;box-shadow:0 0 4px #34d399;"></span> Upload
               </div>
             </div>
           </div>
@@ -797,67 +849,36 @@
 </section>
 
 <!-- Pricing -->
-<section class="pricing-section" id="pricing" style="background:var(--bg2);">
-  <div class="wrap-wide">
+<section class="pricing-section" id="pricing">
+  <div class="wrap">
     <div class="section-tag" style="text-align:center;">Pricing</div>
-    <h2 style="font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-0.03em;color:var(--text);">Choose your level of protection</h2>
-    <p style="color:var(--text-mid);margin-top:8px;max-width:520px;margin-left:auto;margin-right:auto;">All plans include hardware rental. Pricing coming soon — <a href="#contact" style="color:var(--blue);font-weight:600;">apply for our free pilot</a>.</p>
-
-    <div class="pricing-grid">
-
-      <!-- Tier 1 -->
-      <div class="price-card">
-        <div class="price-tier">Monitoring Only</div>
-        <ul class="price-features" style="margin-top:1.25rem;">
-          <li><i data-lucide="check-circle" width="14" height="14"></i> 24/7 internet monitoring</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Instant alerts on outage &amp; recovery</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Online dashboard</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Realtime WiFi performance page to share with prospective guests (checkoutmywifi.com)</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Cellular Backup Connection*</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Hardware rental included</li>
-        </ul>
-        <a href="#contact" class="btn-full">Coming Soon!<br>Apply for Our Free Pilot</a>
-      </div>
-
-      <!-- Tier 2 - Featured -->
-      <div class="price-card featured">
-        <div class="price-badge">Most Popular</div>
-        <div class="price-tier">Self-Healing</div>
-        <ul class="price-features" style="margin-top:1.25rem;">
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Everything in Monitoring Only</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Automatic healing when outages are detected</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Smart plug control via Zigbee (works offline)</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Heals before guests notice</li>
-        </ul>
-        <a href="#contact" class="btn-full">Coming Soon!<br>Apply for Our Free Pilot</a>
-      </div>
-
-      <!-- Tier 3 -->
-      <div class="price-card">
-        <div class="price-tier">Fully Managed</div>
-        <ul class="price-features" style="margin-top:1.25rem;">
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Everything in Self-Healing</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Active monitoring by our support team</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Human diagnosis when auto-heal can't resolve</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Direct communication with your team</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Priority response &amp; escalation</li>
-        </ul>
-        <a href="#contact" class="btn-full">Coming Soon!<br>Apply for Our Free Pilot</a>
-      </div>
-
+    <h2 style="font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-0.03em;">Simple, flat pricing</h2>
+    <p style="color:var(--text-mid);margin-top:8px;">Everything included. No hidden fees.</p>
+    <div class="price-card">
+      <div class="price-amount">$39<span>/mo</span></div>
+      <div class="price-sub">per property · cancel anytime</div>
+      <ul class="price-features">
+        <li><i data-lucide="check-circle" width="15" height="15"></i> 24/7 cellular-independent monitoring</li>
+        <li><i data-lucide="check-circle" width="15" height="15"></i> Auto-heal: fast automatic recovery</li>
+        <li><i data-lucide="check-circle" width="15" height="15"></i> Instant email alerts on outage + recovery</li>
+        <li><i data-lucide="check-circle" width="15" height="15"></i> Lighthouse hardware device included</li>
+        <li><i data-lucide="check-circle" width="15" height="15"></i> checkoutmywifi.com public page</li>
+        <li><i data-lucide="check-circle" width="15" height="15"></i> Online dashboard for all properties</li>
+      </ul>
+      <a href="#contact" class="btn-full">Get started — join the pilot</a>
     </div>
-    <p style="font-size:12px;color:var(--text-dim);margin-top:24px;">* The cellular backup connection is used exclusively by the Lighthouse device for monitoring and remote management. It is not available for guest internet use.</p>
   </div>
 </section>
 
 <!-- Contact -->
-<section class="contact-section" id="contact">
+<section class="contact-section" id="contact" style="background:var(--bg2);">
   <div class="wrap-wide">
     <div class="contact-inner">
       <div class="contact-left">
         <div class="section-tag">Join the Pilot</div>
-        <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:16px;">Early access for STR hosts</h2>
-        <p>We're onboarding a focused group of hosts to check out Lighthouse and provide feedback. If you manage short-term rentals and want to provide the best internet and WiFi experience to your guests, let's talk.</p>
+        <h2>Early access for STR hosts</h2>
+        <p>We're onboarding a focused group of hosts to validate Lighthouse in the real world. If you manage short-term rentals and WiFi headaches are on your radar, let's talk.</p>
+        <p style="margin-top:16px;">We handle setup. You never think about WiFi outages again.</p>
       </div>
       <div>
         <form id="contactForm" action="https://formspree.io/f/xnjbepoe" method="POST">
@@ -889,7 +910,7 @@
           <p class="form-note">No spam. We'll reach out personally within 1 business day.</p>
         </form>
         <div class="form-success" id="formSuccess">
-          ✓ You're in. We'll be in touch soon.
+          You're in. We'll be in touch soon.
         </div>
       </div>
     </div>
@@ -897,21 +918,33 @@
 </section>
 
 <footer>
-  <p>&copy; 2026 <a href="https://www.919solutions.com" target="_blank" rel="noopener">919 IT Solutions</a>. All rights reserved.</p>
+  <p>&copy; 2026 919 IT Solutions. All rights reserved.</p>
 </footer>
 
 <script>
   lucide.createIcons();
+
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
     try {
-      const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-      if (res.ok) { form.style.display = 'none'; success.style.display = 'block'; }
-      else { alert('Something went wrong. Please try again.'); }
-    } catch { alert('Something went wrong. Please try again.'); }
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch {
+      alert('Something went wrong. Please try again.');
+    }
   });
 </script>
 </body>
