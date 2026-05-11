@@ -596,7 +596,7 @@
     <a href="#features">Features</a>
     <a href="#wifi-page">WiFi Performance Page</a>
     <a href="#pricing">Pricing</a>
-    <a href="#contact" class="nav-cta">Get Started</a>
+    <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
@@ -609,7 +609,7 @@
   <h1>Always Watching.<br>Always On.</h1>
   <p class="hero-sub">Lighthouse guards your rental's internet over its own cellular link. When it drops, we automatically heal the connection — quickly, before guests notice a thing.</p>
   <div class="hero-actions">
-    <a href="#contact" class="btn-glow">Join the free pilot</a>
+    <a href="#pricing" class="btn-glow">See Plans &amp; Pricing</a>
     <a href="#how-it-works" class="btn-outline">See how it works</a>
   </div>
 </section>
@@ -952,98 +952,72 @@
   <div class="wrap-wide">
     <div class="section-tag" style="text-align:center;">Pricing</div>
     <h2 style="font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-0.03em;color:var(--text);">Choose your level of protection</h2>
-    <p style="color:var(--text-mid);margin-top:8px;max-width:520px;margin-left:auto;margin-right:auto;">All plans include hardware rental. Pricing coming soon — <a href="#contact" style="color:var(--blue);font-weight:600;">apply for our free pilot</a>.</p>
+    <p style="color:var(--text-mid);margin-top:8px;max-width:520px;margin-left:auto;margin-right:auto;">All plans include hardware rental. $99 one-time setup fee.</p>
 
     <div class="pricing-grid">
 
       <!-- Tier 1 -->
       <div class="price-card">
         <div class="price-tier">Monitoring Only</div>
-        <ul class="price-features" style="margin-top:1.25rem;">
+        <div class="price-amount">$19<span>.99/mo</span></div>
+        <div class="price-sub">$99 one-time setup fee</div>
+        <ul class="price-features">
           <li><i data-lucide="check-circle" width="14" height="14"></i> 24/7 internet monitoring</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Instant alerts on outage &amp; recovery</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Online dashboard</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Realtime WiFi performance page to share with prospective guests (checkoutmywifi.com)</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Cellular Backup Connection*</li>
+          <li><i data-lucide="check-circle" width="14" height="14"></i> CheckoutMyWifi performance page</li>
+          <li><i data-lucide="check-circle" width="14" height="14"></i> Cellular backup connection*</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Hardware rental included</li>
         </ul>
-        <a href="#contact" class="btn-full">Coming Soon!<br>Apply for Our Free Pilot</a>
+        <button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('monitoring')">Get Started</button>
       </div>
 
       <!-- Tier 2 - Featured -->
       <div class="price-card featured">
         <div class="price-badge">Most Popular</div>
         <div class="price-tier">Self-Healing</div>
-        <ul class="price-features" style="margin-top:1.25rem;">
+        <div class="price-amount">$49<span>.99/mo</span></div>
+        <div class="price-sub">$99 one-time setup fee</div>
+        <ul class="price-features">
           <li><i data-lucide="check-circle" width="14" height="14"></i> Everything in Monitoring Only</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Automatic healing when outages are detected</li>
+          <li><i data-lucide="check-circle" width="14" height="14"></i> Automatic reboot on outage detection</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Smart plug control via Zigbee (works offline)</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Heals before guests notice</li>
         </ul>
-        <a href="#contact" class="btn-full">Coming Soon!<br>Apply for Our Free Pilot</a>
+        <button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('self_healing')">Get Started</button>
       </div>
 
       <!-- Tier 3 -->
       <div class="price-card">
-        <div class="price-tier">Fully Managed</div>
-        <ul class="price-features" style="margin-top:1.25rem;">
+        <div class="price-tier">Full-Service</div>
+        <div class="price-amount">$89<span>.99/mo</span></div>
+        <div class="price-sub">$99 one-time setup fee</div>
+        <ul class="price-features">
           <li><i data-lucide="check-circle" width="14" height="14"></i> Everything in Self-Healing</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Active monitoring by our support team</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Human diagnosis when auto-heal can't resolve</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Direct communication with your team</li>
+          <li><i data-lucide="check-circle" width="14" height="14"></i> Human response to unresolved incidents</li>
+          <li><i data-lucide="check-circle" width="14" height="14"></i> Direct communication with our team</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Priority response &amp; escalation</li>
         </ul>
-        <a href="#contact" class="btn-full">Coming Soon!<br>Apply for Our Free Pilot</a>
+        <button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('full_service')">Get Started</button>
       </div>
 
+    </div>
+    <div style="margin-top:28px;display:flex;align-items:center;justify-content:center;gap:10px;">
+      <input type="checkbox" id="tos-agree" style="width:18px;height:18px;accent-color:#29abe2;cursor:pointer;flex-shrink:0;">
+      <label for="tos-agree" style="font-size:14px;color:var(--text-mid);cursor:pointer;">
+        I agree to the <a href="/terms" target="_blank" style="color:#29abe2;font-weight:600;">Terms of Service</a>
+      </label>
     </div>
     <p style="font-size:12px;color:var(--text-dim);margin-top:24px;">* The cellular backup connection is used exclusively by the Lighthouse device for monitoring and remote management. It is not available for guest internet use.</p>
   </div>
 </section>
 
 <!-- Contact -->
-<section class="contact-section" id="contact">
-  <div class="wrap-wide">
-    <div class="contact-inner">
-      <div class="contact-left">
-        <div class="section-tag">Join the Pilot</div>
-        <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:16px;">Early access for STR hosts</h2>
-        <p>We're onboarding a focused group of hosts to check out Lighthouse and provide feedback. If you manage short-term rentals and want to provide the best internet and WiFi experience to your guests, let's talk.</p>
-      </div>
-      <div>
-        <form id="contactForm" action="https://formspree.io/f/xnjbepoe" method="POST">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone <span style="font-weight:400;opacity:0.6;">(optional)</span></label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
-          </div>
-          <div class="form-group">
-            <label for="properties">Number of properties</label>
-            <select id="properties" name="properties">
-              <option value="">Select...</option>
-              <option value="1">1 property</option>
-              <option value="2-5">2–5 properties</option>
-              <option value="6-20">6–20 properties</option>
-              <option value="20+">20+ properties</option>
-            </select>
-          </div>
-          <button type="submit" class="btn-full" style="border:none;cursor:pointer;font-family:inherit;">
-            Request early access
-          </button>
-          <p class="form-note">No spam. We'll reach out personally within 1 business day.</p>
-        </form>
-        <div class="form-success" id="formSuccess">
-          ✓ You're in. We'll be in touch soon.
-        </div>
-      </div>
-    </div>
+<section class="contact-section" id="contact" style="padding:64px 0;text-align:center;background:var(--bg2);">
+  <div class="wrap">
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:12px;">Have questions?</h2>
+    <p style="color:var(--text-mid);font-size:16px;margin-bottom:28px;">We're happy to help you choose the right plan for your property.</p>
+    <a href="mailto:support@lighthouse-str.com" class="btn-glow">Contact Us</a>
   </div>
 </section>
 
@@ -1053,17 +1027,32 @@
 
 <script>
   lucide.createIcons();
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const data = new FormData(form);
+
+  async function startCheckout(plan) {
+    const agreed = document.getElementById('tos-agree');
+    if (!agreed || !agreed.checked) {
+      alert('Please agree to the Terms of Service before continuing.');
+      return;
+    }
+    const btn = event.target;
+    const original = btn.textContent;
+    btn.textContent = 'Loading...';
+    btn.disabled = true;
     try {
-      const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-      if (res.ok) { form.style.display = 'none'; success.style.display = 'block'; }
-      else { alert('Something went wrong. Please try again.'); }
-    } catch { alert('Something went wrong. Please try again.'); }
-  });
+      const res = await fetch('/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan }),
+      });
+      if (!res.ok) throw new Error('Server error');
+      const data = await res.json();
+      window.location.href = data.checkout_url;
+    } catch (e) {
+      alert('Something went wrong. Please try again or contact support@lighthouse-str.com');
+      btn.textContent = original;
+      btn.disabled = false;
+    }
+  }
 </script>
 </body>
 </html>
