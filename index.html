@@ -1031,7 +1031,7 @@
   async function startCheckout(plan) {
     const agreed = document.getElementById('tos-agree');
     if (!agreed || !agreed.checked) {
-      alert('Please agree to the Terms of Service before continuing.');
+      alert('Please agree to the Terms of Service below before continuing.');
       return;
     }
     const btn = event.target;
