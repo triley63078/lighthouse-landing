@@ -669,9 +669,25 @@
     .video-layout { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
     .video-heading { margin-bottom: 0; }
 
+    /* Hamburger */
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.2s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .mobile-menu { display: none; position: fixed; top: 108px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--border-dim); z-index: 99; padding: 12px 0; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .mobile-menu.open { display: block; }
+    .mobile-link { display: block; padding: 14px 24px; font-size: 15px; font-weight: 500; color: var(--text-mid); border-bottom: 1px solid var(--border-dim); }
+    .mobile-link:last-child { border-bottom: none; }
+    .mobile-link:hover { color: var(--text); background: var(--bg2); }
+    .mobile-cta { color: var(--blue) !important; font-weight: 700; }
+
     @media (max-width: 700px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
+      .hamburger { display: flex; }
       .hero { padding: 72px 20px 72px; }
       .problem-cards { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
@@ -718,7 +734,21 @@
     <a href="#faq">FAQ</a>
     <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#problem" class="mobile-link">Why Lighthouse?</a>
+  <a href="#how-it-works" class="mobile-link">How it works</a>
+  <a href="#features" class="mobile-link">Features</a>
+  <a href="#wifi-page" class="mobile-link">Boost Bookings</a>
+  <a href="#pricing" class="mobile-link">Pricing</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#pricing" class="mobile-link mobile-cta">Get Started</a>
+</div>
 
 <!-- Hero -->
 <section class="hero">
@@ -1221,6 +1251,20 @@
       btn.disabled = false;
     }
   }
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
 </script>
 </body>
 </html>
