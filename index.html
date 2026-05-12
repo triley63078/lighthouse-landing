@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lighthouse — 24/7 Internet Monitoring for Short-Term Rentals</title>
+  <title>Lighthouse — WiFi Fixed Before Your Guests Notice</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 112 150'%3E%3Crect width='112' height='150' fill='%23ffffff'/%3E%3Cpath d='M42,122 L50,30 L62,30 L70,122 Z' fill='none' stroke='%2329abe2' stroke-width='3'/%3E%3Crect x='44' y='26' width='24' height='5' fill='none' stroke='%2329abe2' stroke-width='2.5' rx='1'/%3E%3Ccircle cx='56' cy='16' r='1.5' fill='%23fbbf24'/%3E%3C/svg%3E" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9F2LPTD1D"></script>
@@ -76,7 +76,7 @@
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-dim);
       padding: 0 40px;
-      height: 96px;
+      height: 108px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -138,7 +138,7 @@
     }
     .hero-eyebrow i { width: 13px; height: 13px; }
     .hero h1 {
-      font-size: clamp(44px, 7vw, 72px);
+      font-size: clamp(32px, 4.2vw, 52px);
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1.06;
@@ -152,10 +152,28 @@
       font-size: 19px;
       color: var(--text-mid);
       line-height: 1.65;
-      max-width: 540px;
+      max-width: 560px;
       margin: 0 auto 40px;
     }
     .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .hero-strip {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-dim);
+    }
+    .hero-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-mid);
+      font-weight: 500;
+    }
+    .hero-strip-item i { color: var(--blue); }
     .btn-glow {
       background: var(--blue);
       color: #fff;
@@ -185,7 +203,6 @@
       display: inline-block;
     }
     .btn-outline:hover { border-color: var(--blue); color: var(--blue); }
-
 
     /* Section base */
     .section { padding: 88px 0; }
@@ -242,6 +259,45 @@
     }
     .problem-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
     .problem-card p { font-size: 13px; color: var(--text-mid); line-height: 1.65; margin: 0; }
+
+    /* Comparison */
+    .compare-section { padding: 88px 0; }
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .compare-col {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-dim);
+    }
+    .compare-col.lh { border-color: var(--blue); box-shadow: 0 8px 32px var(--blue-glow); }
+    .compare-header {
+      padding: 16px 24px;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .compare-col:not(.lh) .compare-header { background: #f8fafc; color: var(--text-mid); border-bottom: 1px solid var(--border-dim); }
+    .compare-col.lh .compare-header { background: var(--blue); color: #fff; }
+    .compare-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--border-dim);
+      font-size: 14px;
+      color: var(--text-mid);
+    }
+    .compare-row:last-child { border-bottom: none; }
+    .compare-col.lh .compare-row { color: var(--text); }
+    .compare-icon { flex-shrink: 0; margin-top: 1px; }
+    .compare-icon.x { color: #f87171; }
+    .compare-icon.check { color: var(--blue); }
 
     /* Timeline */
     .timeline { margin-top: 48px; position: relative; }
@@ -301,33 +357,140 @@
     .feature-cell h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
     .feature-cell p { font-size: 13px; color: var(--text-mid); margin: 0; line-height: 1.6; }
 
+    /* Testimonial */
+    .testimonial-section { padding: 88px 0; background: var(--bg2); }
+    .testimonial-card {
+      background: var(--bg);
+      border: 1px solid var(--border-dim);
+      border-radius: 16px;
+      padding: 40px 48px;
+      max-width: 720px;
+      margin: 40px auto 0;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 24px; left: 40px;
+      font-size: 72px;
+      line-height: 1;
+      color: var(--blue-dim);
+      font-family: Georgia, serif;
+    }
+    .testimonial-quote {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--text);
+      font-style: italic;
+      margin-bottom: 24px;
+      padding-top: 20px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .testimonial-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--blue-dim);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .testimonial-name { font-size: 14px; font-weight: 700; color: var(--text); }
+    .testimonial-title { font-size: 13px; color: var(--text-dim); }
+    .testimonial-placeholder {
+      border: 2px dashed var(--border-dim);
+      background: var(--bg2);
+      color: var(--text-dim);
+      font-style: italic;
+      font-size: 15px;
+      text-align: center;
+      padding: 48px;
+    }
+
     /* WiFi section */
-    .wifi-section { padding: 88px 0; }
+    .wifi-section {
+      background: linear-gradient(135deg, #0b1929 0%, #0f2640 60%, #0d1f35 100%);
+      padding: 100px 0 80px;
+    }
     .wifi-inner {
       display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 64px;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 72px;
       align-items: center;
     }
-    .wifi-text p { font-size: 16px; color: var(--text-mid); line-height: 1.7; margin-bottom: 16px; }
+    .wifi-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #29abe2;
+      margin-bottom: 14px;
+    }
+    .wifi-h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .wifi-text p { font-size: 16px; color: #8da5b8; line-height: 1.75; margin-bottom: 16px; }
+    .wifi-text strong { color: #fff; }
     .wifi-example-link {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: var(--blue-dim);
-      border: 1px solid var(--border);
+      background: rgba(41,171,226,0.15);
+      border: 1px solid rgba(41,171,226,0.4);
       border-radius: 6px;
-      padding: 8px 16px;
+      padding: 9px 18px;
       font-size: 13px;
       font-weight: 600;
-      color: var(--blue);
+      color: #29abe2;
       transition: background 0.15s, box-shadow 0.15s;
+      margin-top: 4px;
     }
     .wifi-example-link:hover {
-      color: var(--blue);
-      background: rgba(41,171,226,0.14);
-      box-shadow: 0 4px 16px var(--blue-glow);
+      color: #29abe2;
+      background: rgba(41,171,226,0.25);
+      box-shadow: 0 4px 16px rgba(41,171,226,0.3);
     }
+    .wifi-tools {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 52px;
+      padding-top: 52px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .wifi-tool-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(41,171,226,0.2);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .wifi-tool-icon {
+      width: 36px; height: 36px;
+      background: rgba(41,171,226,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #29abe2;
+      margin-bottom: 14px;
+    }
+    .wifi-tool-card h3 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .wifi-tool-card p { font-size: 13px; color: #8da5b8; line-height: 1.6; margin: 0; }
+    @media (max-width: 700px) { .wifi-tools { grid-template-columns: 1fr; } }
 
     /* Browser mockup */
     .browser-mock {
@@ -358,47 +521,41 @@
       color: var(--text-dim);
       flex: 1;
     }
-    .browser-content { padding: 24px; background: var(--bg); }
-    .mock-header {
+
+    /* FAQ */
+    .faq-section { padding: 88px 0; background: var(--bg2); }
+    .faq-list { margin-top: 40px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--border-dim);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border-dim); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 20px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 20px;
+      gap: 16px;
+      font-family: inherit;
     }
-    .mock-title { font-size: 15px; font-weight: 700; color: var(--text); }
-    .mock-sub { font-size: 11px; color: var(--text-dim); margin-top: 2px; }
-    .mock-badge {
-      font-size: 11px; font-weight: 700;
-      background: #f0fdf4; color: #16a34a;
-      border: 1px solid #bbf7d0;
-      padding: 3px 10px; border-radius: 999px;
+    .faq-q:hover { color: var(--blue); }
+    .faq-chevron { color: var(--text-dim); transition: transform 0.2s; flex-shrink: 0; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--blue); }
+    .faq-a {
+      display: none;
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      padding-bottom: 20px;
     }
-    .mock-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    .mock-stat {
-      background: var(--bg2);
-      border: 1px solid var(--border-dim);
-      border-radius: 8px;
-      padding: 12px;
-      text-align: center;
-    }
-    .mock-stat-val {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--blue);
-      letter-spacing: -0.02em;
-    }
-    .mock-stat-lbl {
-      font-size: 10px;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      margin-top: 3px;
-    }
+    .faq-item.open .faq-a { display: block; }
 
     /* Pricing */
     .pricing-section { padding: 88px 0; text-align: center; }
@@ -489,53 +646,6 @@
       transform: translateY(-1px);
     }
 
-    /* Contact */
-    .contact-section { padding: 88px 0; }
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-    }
-    .contact-left p { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
-
-    .form-group { margin-bottom: 16px; }
-    .form-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--text-mid);
-      margin-bottom: 6px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .form-group input, .form-group select {
-      width: 100%;
-      padding: 11px 14px;
-      border: 1px solid var(--border-dim);
-      border-radius: 7px;
-      font-size: 14px;
-      color: var(--text);
-      background: var(--bg);
-      outline: none;
-      transition: border-color 0.15s, box-shadow 0.15s;
-    }
-    .form-group input:focus, .form-group select:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(41,171,226,0.1);
-    }
-    .form-group input::placeholder { color: var(--text-dim); }
-    .form-note { font-size: 12px; color: var(--text-dim); margin-top: 12px; }
-    .form-success {
-      display: none;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      border-radius: 10px;
-      padding: 24px;
-      text-align: center;
-      font-size: 15px;
-      color: #16a34a;
-    }
-
     /* Footer */
     footer {
       border-top: 1px solid var(--border-dim);
@@ -550,6 +660,8 @@
       .problem-cards { grid-template-columns: 1fr 1fr; }
       .features-grid { grid-template-columns: 1fr 1fr; }
       .wifi-inner { grid-template-columns: 1fr; gap: 36px; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .testimonial-card { padding: 32px 28px; }
     }
     .hiw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
     @media (max-width: 700px) {
@@ -557,7 +669,6 @@
       .nav-links { display: none; }
       .hero { padding: 72px 20px 72px; }
       .problem-cards { grid-template-columns: 1fr; }
-      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
       .features-grid { grid-template-columns: 1fr; }
       .hiw-grid { grid-template-columns: 1fr; gap: 36px; }
     }
@@ -569,12 +680,12 @@
 <div class="announce">
   <span class="announce-pill">New</span>
   Stand out from every other listing — let guests verify your WiFi speed before they book.
-  <a href="#wifi-page">See the Lighthouse 'Check Out My WiFi' feature →</a>
+  <a href="#wifi-page">Learn more →</a>
 </div>
 
 <!-- Nav -->
 <nav>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 150" width="260" height="81">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 150" width="310" height="97">
     <g opacity="0.12"><path d="M55 28 L0 5 L55 28" fill="#29abe2"/><path d="M55 28 L110 5 L55 28" fill="#29abe2"/><path d="M55 28 L18 0 L55 28" fill="#29abe2"/><path d="M55 28 L92 0 L55 28" fill="#29abe2"/></g>
     <path d="M42,122 L50,30 L62,30 L70,122 Z" fill="none" stroke="#29abe2" stroke-width="2" stroke-linejoin="round"/>
     <rect x="44" y="26" width="24" height="5" fill="none" stroke="#29abe2" stroke-width="2" rx="1"/>
@@ -594,8 +705,9 @@
     <a href="#problem">Why Lighthouse?</a>
     <a href="#how-it-works">How it works</a>
     <a href="#features">Features</a>
-    <a href="#wifi-page">WiFi Performance Page</a>
+    <a href="#wifi-page">Boost Bookings</a>
     <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
     <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
 </nav>
@@ -603,24 +715,29 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-eyebrow">
-    <i data-lucide="radio"></i>
-    24/7 Internet Monitoring for Short-Term Rentals
+    <i data-lucide="zap"></i>
+    Self-Healing Internet for Short-Term Rentals
   </div>
-  <h1>Always Watching.<br>Always On.</h1>
-  <p class="hero-sub">Lighthouse guards your rental's internet over its own cellular link. When it drops, we automatically heal the connection — quickly, before guests notice a thing.</p>
+  <h1>Internet and WiFi Issues Resolved Before Your Guests Notice.</h1>
+  <p class="hero-sub">Lighthouse monitors your rental's internet over its own private cellular link — completely independent of your WiFi. When it drops, Lighthouse automatically reboots the right device in the right order, before guests ever see a problem.</p>
   <div class="hero-actions">
     <a href="#pricing" class="btn-glow">See Plans &amp; Pricing</a>
     <a href="#how-it-works" class="btn-outline">See how it works</a>
   </div>
+  <div class="hero-strip">
+    <div class="hero-strip-item"><i data-lucide="zap" width="15" height="15"></i> Auto-healing</div>
+    <div class="hero-strip-item"><i data-lucide="signal" width="15" height="15"></i> Cellular monitoring</div>
+    <div class="hero-strip-item"><i data-lucide="bell" width="15" height="15"></i> Instant email alerts</div>
+    <div class="hero-strip-item"><i data-lucide="trending-up" width="15" height="15"></i> Boost bookings with checkoutmywifi.com</div>
+  </div>
 </section>
-
 
 <!-- Problem -->
 <section class="section" id="problem" style="background: var(--bg2);">
   <div class="wrap-wide">
     <div style="text-align:center;">
       <div class="section-tag">The Problem</div>
-      <h2 style="text-align:center;">WiFi problems destroy<br>5-star ratings</h2>
+      <h2 style="text-align:center;">Internet and WiFi Issues Destroy 5-Star Ratings</h2>
       <p style="text-align:center;">Most internet failures are a simple reboot. But by the time you find out, the damage is already done.</p>
     </div>
     <div class="problem-cards">
@@ -637,14 +754,43 @@
       <div class="problem-card">
         <div class="problem-card-icon"><i data-lucide="car" width="20" height="20"></i></div>
         <h3>Unnecessary property visits</h3>
-        <p>Sending anyone to the property just to unplug a router is a waste of time and money that compounds across properties.</p>
+        <p>Sending anyone to the property just to power-cycle a router is a waste of time and money that compounds across properties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why not a smart plug? -->
+<section class="compare-section" id="compare">
+  <div class="wrap-wide">
+    <div style="text-align:center;">
+      <div class="section-tag">Why Not Just a Smart Plug?</div>
+      <h2 style="text-align:center;">Smart plugs fail when you need them most</h2>
+      <p style="text-align:center;max-width:560px;margin:0 auto;">A WiFi smart plug can't reboot your router — because it needs your WiFi to work. Lighthouse is different by design.</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-col">
+        <div class="compare-header"><i data-lucide="plug" width="16" height="16"></i> WiFi Smart Plug</div>
+        <div class="compare-row"><i data-lucide="x-circle" width="16" height="16" class="compare-icon x"></i> Controlled over WiFi — fails when internet drops</div>
+        <div class="compare-row"><i data-lucide="x-circle" width="16" height="16" class="compare-icon x"></i> Can't reboot your router from the cloud if WiFi is down</div>
+        <div class="compare-row"><i data-lucide="x-circle" width="16" height="16" class="compare-icon x"></i> No monitoring — you find out from an angry guest</div>
+        <div class="compare-row"><i data-lucide="x-circle" width="16" height="16" class="compare-icon x"></i> Manual — someone has to decide to reboot</div>
+        <div class="compare-row"><i data-lucide="x-circle" width="16" height="16" class="compare-icon x"></i> No guest-facing WiFi proof</div>
+      </div>
+      <div class="compare-col lh">
+        <div class="compare-header"><i data-lucide="radio" width="16" height="16"></i> Lighthouse</div>
+        <div class="compare-row"><i data-lucide="check-circle" width="16" height="16" class="compare-icon check"></i> Plug control over Zigbee radio — works even when internet is fully down</div>
+        <div class="compare-row"><i data-lucide="check-circle" width="16" height="16" class="compare-icon check"></i> Monitors over private LTE — independent of your connection</div>
+        <div class="compare-row"><i data-lucide="check-circle" width="16" height="16" class="compare-icon check"></i> Instant alert to you the moment an outage is detected</div>
+        <div class="compare-row"><i data-lucide="check-circle" width="16" height="16" class="compare-icon check"></i> Automatic — reboots the right device in the right sequence</div>
+        <div class="compare-row"><i data-lucide="check-circle" width="16" height="16" class="compare-icon check"></i> Verified WiFi page guests can see before they book</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- How it works -->
-<section class="section" id="how-it-works">
+<section class="section" id="how-it-works" style="background: var(--bg2);">
   <div class="wrap-wide">
     <div class="hiw-grid">
       <div>
@@ -657,28 +803,28 @@
           <div class="timeline-dot"><i data-lucide="signal" width="18" height="18"></i></div>
           <div class="timeline-content">
             <h3>Cellular-backed monitoring</h3>
-            <p>Lighthouse uses its own cellular backup connection, which allows for alerts to be sent even when your internet is completely down. In our Fully Managed plan, it also allows our support team to remotely troubleshoot your internet outage.</p>
+            <p>Lighthouse uses its own cellular connection for monitoring, alerting, and remote management. Because it's fully separate from your property's internet, outages are detected and reported even when your ISP is completely down.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"><i data-lucide="zap" width="18" height="18"></i></div>
           <div class="timeline-content">
             <h3>Automatic healing, right sequence</h3>
-            <p>Outage detected. Lighthouse automatically heals the connection — cycling the right device in the right order.</p>
+            <p>Outage detected. Lighthouse automatically reboots the right device in the right order over Zigbee — no WiFi required.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"><i data-lucide="bell" width="18" height="18"></i></div>
           <div class="timeline-content">
             <h3>Alerts when detected and when fixed</h3>
-            <p>You get an alert when the outage starts and another when internet returns. No action required on your end.</p>
+            <p>Email alerts keep you in the loop both when an issue occurs and when it's resolved. No action needed on your end.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"><i data-lucide="eye" width="18" height="18"></i></div>
           <div class="timeline-content">
             <h3>Human escalation if needed</h3>
-            <p>If auto-heal doesn't resolve it, you're notified so you can intervene. With our Fully Managed plan, our support team jumps in to diagnose the problem for you.</p>
+            <p>If auto-heal doesn't resolve it, you're notified immediately. On our Full-Service plan, our team jumps in to diagnose and coordinate a fix.</p>
           </div>
         </div>
       </div>
@@ -687,7 +833,7 @@
 </section>
 
 <!-- Features -->
-<section class="section" id="features" style="background:var(--bg2); padding: 88px 0;">
+<section class="section" id="features" style="padding: 88px 0;">
   <div class="wrap-wide">
     <div style="text-align:center;">
       <div class="section-tag">Features</div>
@@ -702,7 +848,7 @@
       <div class="feature-cell">
         <span class="feature-icon"><i data-lucide="zap" width="22" height="22"></i></span>
         <h3>Auto-healing</h3>
-        <p>Smart auto-heal targets the right device. Most issues resolved before guests notice anything</p>
+        <p>Smart auto-heal targets the right device in the right order. Most issues resolved before guests notice anything.</p>
       </div>
       <div class="feature-cell">
         <span class="feature-icon"><i data-lucide="bell" width="22" height="22"></i></span>
@@ -722,7 +868,7 @@
       <div class="feature-cell">
         <span class="feature-icon"><i data-lucide="globe" width="22" height="22"></i></span>
         <h3>Public WiFi performance page</h3>
-        <p>Share realtime uptime and speed stats with guests at checkoutmywifi.com/your-property.</p>
+        <p>Share verified uptime and speed data with guests at checkoutmywifi.com/your-property.</p>
       </div>
     </div>
   </div>
@@ -733,13 +879,14 @@
   <div class="wrap-wide">
     <div class="wifi-inner">
       <div class="wifi-text">
-        <div class="section-tag">checkoutmywifi.com</div>
-        <h2 style="font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:16px;">Turn great WiFi into more bookings</h2>
-        <p>Guests filter by WiFi before they book — but no listing can actually prove it's reliable. Until now.</p>
-        <p>Every Lighthouse property gets a verified performance page at checkoutmywifi.com showing real speeds, real uptime, and earned achievement badges. Share the link in your listing description, pre-arrival messages, or anywhere you market your property — and let the data do the selling. While every other host says their WiFi is great, you can prove it.</p>
+        <div class="wifi-kicker">checkoutmywifi.com</div>
+        <h2 class="wifi-h2">Turn great WiFi into more bookings</h2>
+        <p>Guests filter by WiFi before they book — but no listing can actually <em>prove</em> it's reliable. Until now.</p>
+        <p>Every Lighthouse property gets a verified performance page at <strong>checkoutmywifi.com</strong> showing real speeds, real uptime, and earned achievement badges. Share it in your listing, pre-arrival messages, or direct booking site.</p>
+        <p><strong>While every other host says their WiFi is great, you can prove it.</strong></p>
         <a href="https://checkoutmywifi.com/example" target="_blank" class="wifi-example-link">
           <i data-lucide="external-link" width="14" height="14"></i>
-          See an example
+          See an example page
         </a>
       </div>
       <div>
@@ -752,194 +899,125 @@
             </div>
             <div class="browser-url">checkoutmywifi.com/beachhouse</div>
           </div>
-          <div class="browser-content" style="padding:0;overflow:hidden;">
-
-            <!-- Property hero -->
+          <div style="padding:0;overflow:hidden;">
             <div style="background:linear-gradient(135deg,#0b1929 0%,#1a2b3c 100%);padding:14px 16px 12px;text-align:center;">
               <div style="font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:#29abe2;font-weight:700;margin-bottom:4px;">WiFi Performance Report</div>
               <div style="font-size:15px;font-weight:800;color:#fff;letter-spacing:-0.01em;">Beach House on Oak St</div>
               <div style="font-size:10px;color:#8da5b8;margin-top:3px;">Last tested 2 hours ago</div>
             </div>
-
-            <!-- Lighthouse Verified panel -->
             <div style="margin:10px 12px 0;border-radius:10px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.12);">
               <div style="background:linear-gradient(135deg,#0b1929 0%,#1a3a52 100%);padding:7px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(41,171,226,0.25);">
                 <div style="display:flex;align-items:center;gap:6px;">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 75" width="12" height="15" style="opacity:0.9;">
-                    <path d="M21,61 L25,15 L31,15 L35,61 Z" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
-                    <rect x="22" y="13" width="12" height="2.5" fill="none" stroke="#fff" stroke-width="1.5" rx="0.5"/>
-                    <rect x="18" y="61" width="20" height="3" fill="none" stroke="#fff" stroke-width="1.5" rx="0.5"/>
-                    <circle cx="28" cy="8" r="0.8" fill="#fbbf24"/>
-                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 75" width="12" height="15" style="opacity:0.9;"><path d="M21,61 L25,15 L31,15 L35,61 Z" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/><rect x="22" y="13" width="12" height="2.5" fill="none" stroke="#fff" stroke-width="1.5" rx="0.5"/><rect x="18" y="61" width="20" height="3" fill="none" stroke="#fff" stroke-width="1.5" rx="0.5"/><circle cx="28" cy="8" r="0.8" fill="#fbbf24"/></svg>
                   <span style="font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;">Lighthouse Verified</span>
                 </div>
                 <span style="font-size:7.5px;color:rgba(255,255,255,0.45);">by 919 IT Solutions</span>
               </div>
               <div style="background:#fff;padding:8px 10px;display:flex;flex-wrap:wrap;gap:6px;">
-                <!-- Rock Solid badge -->
                 <div style="display:flex;align-items:center;gap:5px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:999px;padding:4px 9px 4px 5px;">
-                  <div style="width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #bbf7d0;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                    <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#16a34a" fill-opacity="0.15"/><polyline points="9 12 11 14 15 10"/></svg>
-                  </div>
-                  <div>
-                    <div style="font-size:8px;font-weight:700;color:#16a34a;line-height:1.2;">Rock Solid</div>
-                    <div style="font-size:7px;color:#6b7280;line-height:1.2;">99%+ uptime</div>
-                  </div>
+                  <div style="width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #bbf7d0;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#16a34a" fill-opacity="0.15"/><polyline points="9 12 11 14 15 10"/></svg></div>
+                  <div><div style="font-size:8px;font-weight:700;color:#16a34a;line-height:1.2;">Rock Solid</div><div style="font-size:7px;color:#6b7280;line-height:1.2;">99%+ uptime</div></div>
                 </div>
-                <!-- Fiber Fast badge -->
                 <div style="display:flex;align-items:center;gap:5px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:999px;padding:4px 9px 4px 5px;">
-                  <div style="width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #bfdbfe;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                    <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#2563eb" fill-opacity="0.15"/></svg>
-                  </div>
-                  <div>
-                    <div style="font-size:8px;font-weight:700;color:#2563eb;line-height:1.2;">Fiber Fast</div>
-                    <div style="font-size:7px;color:#6b7280;line-height:1.2;">500+ Mbps</div>
-                  </div>
+                  <div style="width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #bfdbfe;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="#2563eb" fill-opacity="0.15"/></svg></div>
+                  <div><div style="font-size:8px;font-weight:700;color:#2563eb;line-height:1.2;">Fiber Fast</div><div style="font-size:7px;color:#6b7280;line-height:1.2;">500+ Mbps</div></div>
                 </div>
-                <!-- Great WiFi badge -->
                 <div style="display:flex;align-items:center;gap:5px;background:#ecfeff;border:1.5px solid #a5f3fc;border-radius:999px;padding:4px 9px 4px 5px;">
-                  <div style="width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #a5f3fc;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                    <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="#0891b2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#0891b2"/></svg>
-                  </div>
-                  <div>
-                    <div style="font-size:8px;font-weight:700;color:#0891b2;line-height:1.2;">Great WiFi</div>
-                    <div style="font-size:7px;color:#6b7280;line-height:1.2;">80+ Mbps</div>
-                  </div>
+                  <div style="width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px #a5f3fc;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="#0891b2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#0891b2"/></svg></div>
+                  <div><div style="font-size:8px;font-weight:700;color:#0891b2;line-height:1.2;">Great WiFi</div><div style="font-size:7px;color:#6b7280;line-height:1.2;">80+ Mbps</div></div>
                 </div>
               </div>
             </div>
-
-            <!-- Activity ratings -->
-            <div style="margin:8px 12px 0;">
-              <div style="font-size:6.5px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px;">How's the WiFi for...</div>
-              <div style="background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:8px 10px;">
-                <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;">
-
-                  <!-- Streaming -->
-                  <div>
-                    <div style="display:flex;align-items:center;gap:3px;margin-bottom:1px;">
-                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                      <span style="font-size:7px;font-weight:700;color:#1a2b3c;">Streaming</span>
-                    </div>
-                    <div style="font-size:6px;color:#9ca3af;margin-bottom:3px;">Netflix · YouTube</div>
-                    <div style="display:flex;gap:2px;">
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                    </div>
-                    <div style="font-size:6.5px;font-weight:700;color:#16a34a;margin-top:2px;">Great</div>
-                  </div>
-
-                  <!-- Video Calls -->
-                  <div>
-                    <div style="display:flex;align-items:center;gap:3px;margin-bottom:1px;">
-                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                      <span style="font-size:7px;font-weight:700;color:#1a2b3c;">Video Calls</span>
-                    </div>
-                    <div style="font-size:6px;color:#9ca3af;margin-bottom:3px;">Zoom · FaceTime</div>
-                    <div style="display:flex;gap:2px;">
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                    </div>
-                    <div style="font-size:6.5px;font-weight:700;color:#16a34a;margin-top:2px;">Great</div>
-                  </div>
-
-                  <!-- Gaming -->
-                  <div>
-                    <div style="display:flex;align-items:center;gap:3px;margin-bottom:1px;">
-                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#65a30d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="11" x2="15.01" y2="11" stroke-width="3"/><line x1="18" y1="13" x2="18.01" y2="13" stroke-width="3"/><path d="M20.13 18.26A10.94 10.94 0 0 1 12 22a10.94 10.94 0 0 1-8.13-3.74L2 14.5C1 12.5 2 10 4 10h16c2 0 3 2.5 2 4.5l-1.87 3.76z"/></svg>
-                      <span style="font-size:7px;font-weight:700;color:#1a2b3c;">Gaming</span>
-                    </div>
-                    <div style="font-size:6px;color:#9ca3af;margin-bottom:3px;">Fortnite · Roblox</div>
-                    <div style="display:flex;gap:2px;">
-                      <div style="width:6px;height:6px;border-radius:50%;background:#65a30d;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#65a30d;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#65a30d;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#65a30d;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#e5e7eb;"></div>
-                    </div>
-                    <div style="font-size:6.5px;font-weight:700;color:#65a30d;margin-top:2px;">Very Good</div>
-                  </div>
-
-                  <!-- WFH -->
-                  <div>
-                    <div style="display:flex;align-items:center;gap:3px;margin-bottom:1px;">
-                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-                      <span style="font-size:7px;font-weight:700;color:#1a2b3c;">Work from Home</span>
-                    </div>
-                    <div style="font-size:6px;color:#9ca3af;margin-bottom:3px;">calls + downloads</div>
-                    <div style="display:flex;gap:2px;">
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                      <div style="width:6px;height:6px;border-radius:50%;background:#16a34a;"></div>
-                    </div>
-                    <div style="font-size:6.5px;font-weight:700;color:#16a34a;margin-top:2px;">Great</div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-            <!-- Stats strip -->
-            <div style="margin:8px 12px 0;background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
+            <div style="margin:8px 12px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
               <div style="display:flex;">
                 <div style="flex:2;border-right:1px solid #f3f4f6;">
                   <div style="background:#f8fafc;border-bottom:1px solid #f3f4f6;padding:3px 6px;text-align:center;font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#29abe2;">Ethernet</div>
                   <div style="display:flex;">
-                    <div style="flex:1;text-align:center;padding:7px 4px;">
-                      <div style="font-size:7px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:2px;">Down</div>
-                      <div style="font-size:14px;font-weight:800;color:#29abe2;line-height:1;">587<span style="font-size:6px;color:#9ca3af;margin-left:1px;">Mbps</span></div>
-                    </div>
-                    <div style="flex:1;text-align:center;padding:7px 4px;border-left:1px solid #f3f4f6;">
-                      <div style="font-size:7px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:2px;">Up</div>
-                      <div style="font-size:14px;font-weight:800;color:#16a34a;line-height:1;">480<span style="font-size:6px;color:#9ca3af;margin-left:1px;">Mbps</span></div>
-                    </div>
+                    <div style="flex:1;text-align:center;padding:7px 4px;"><div style="font-size:7px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:2px;">Down</div><div style="font-size:14px;font-weight:800;color:#29abe2;line-height:1;">587<span style="font-size:6px;color:#9ca3af;margin-left:1px;">Mbps</span></div></div>
+                    <div style="flex:1;text-align:center;padding:7px 4px;border-left:1px solid #f3f4f6;"><div style="font-size:7px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:2px;">Up</div><div style="font-size:14px;font-weight:800;color:#16a34a;line-height:1;">480<span style="font-size:6px;color:#9ca3af;margin-left:1px;">Mbps</span></div></div>
                   </div>
                 </div>
                 <div style="flex:1;border-right:1px solid #f3f4f6;">
                   <div style="background:#f8fafc;border-bottom:1px solid #f3f4f6;padding:3px 6px;text-align:center;font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;">&nbsp;</div>
-                  <div style="text-align:center;padding:7px 4px;">
-                    <div style="font-size:7px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:2px;">Uptime</div>
-                    <div style="font-size:14px;font-weight:800;color:#16a34a;line-height:1;">99.8<span style="font-size:6px;color:#9ca3af;margin-left:1px;">%</span></div>
-                  </div>
+                  <div style="text-align:center;padding:7px 4px;"><div style="font-size:7px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:2px;">Uptime</div><div style="font-size:14px;font-weight:800;color:#16a34a;line-height:1;">99.8<span style="font-size:6px;color:#9ca3af;margin-left:1px;">%</span></div></div>
                 </div>
                 <div style="flex:1;">
                   <div style="background:#f8fafc;border-bottom:1px solid #f3f4f6;padding:3px 6px;text-align:center;font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;">&nbsp;</div>
-                  <div style="text-align:center;padding:7px 4px;">
-                    <div style="font-size:7px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:2px;">Ping</div>
-                    <div style="font-size:14px;font-weight:800;color:#7c3aed;line-height:1;">5<span style="font-size:6px;color:#9ca3af;margin-left:1px;">ms</span></div>
-                  </div>
+                  <div style="text-align:center;padding:7px 4px;"><div style="font-size:7px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:2px;">Ping</div><div style="font-size:14px;font-weight:800;color:#7c3aed;line-height:1;">5<span style="font-size:6px;color:#9ca3af;margin-left:1px;">ms</span></div></div>
                 </div>
               </div>
             </div>
-
-            <!-- Chart -->
-            <div style="margin:8px 12px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:10px 10px 8px;">
-              <div style="font-size:7.5px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Speed Over Time</div>
-              <svg viewBox="0 0 300 70" width="100%" style="display:block;">
-                <line x1="0" y1="17" x2="300" y2="17" stroke="#f3f4f6" stroke-width="1"/>
-                <line x1="0" y1="34" x2="300" y2="34" stroke="#f3f4f6" stroke-width="1"/>
-                <line x1="0" y1="51" x2="300" y2="51" stroke="#f3f4f6" stroke-width="1"/>
-                <path d="M0,52 C20,48 40,36 65,32 C90,28 110,38 135,34 C160,30 180,24 205,26 C230,28 255,32 275,22 C288,16 295,14 300,12" fill="none" stroke="#29abe2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M0,62 C20,59 40,55 65,53 C90,51 110,55 135,52 C160,49 180,46 205,47 C230,48 255,50 275,44 C288,40 295,38 300,36" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Speed history chart -->
+            <div style="margin:0 12px 12px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:7px 10px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+                <div style="font-size:7px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.07em;">Speed History (Mbps)</div>
+                <div style="display:flex;gap:8px;align-items:center;">
+                  <div style="display:flex;align-items:center;gap:2px;"><div style="width:10px;height:2px;background:#29abe2;border-radius:1px;"></div><span style="font-size:6px;color:#6b7280;">Download</span></div>
+                  <div style="display:flex;align-items:center;gap:2px;"><div style="width:10px;height:2px;background:#16a34a;border-radius:1px;"></div><span style="font-size:6px;color:#6b7280;">Upload</span></div>
+                </div>
+              </div>
+              <svg width="100%" height="72" viewBox="0 0 260 72">
+                <text x="20" y="5"  text-anchor="end" font-size="6" fill="#9ca3af">600</text>
+                <text x="20" y="31" text-anchor="end" font-size="6" fill="#9ca3af">300</text>
+                <text x="20" y="57" text-anchor="end" font-size="6" fill="#9ca3af">0</text>
+                <line x1="22" y1="3"  x2="258" y2="3"  stroke="#f3f4f6" stroke-width="1"/>
+                <line x1="22" y1="29" x2="258" y2="29" stroke="#f3f4f6" stroke-width="1"/>
+                <line x1="22" y1="55" x2="258" y2="55" stroke="#f3f4f6" stroke-width="1"/>
+                <polyline fill="none" stroke="#29abe2" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+                  points="28,11 46,6 63,7 81,5 99,10 117,5 135,7 152,6 170,12 188,5 205,8 223,5 240,6 258,5"/>
+                <polyline fill="none" stroke="#16a34a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+                  points="28,41 46,38 63,39 81,37 99,40 117,38 135,38 152,38 170,41 188,37 205,39 223,38 240,38 258,38"/>
+                <text x="28"  y="68" text-anchor="middle" font-size="6" fill="#9ca3af">Apr 12</text>
+                <text x="258" y="68" text-anchor="middle" font-size="6" fill="#9ca3af">May 11</text>
               </svg>
-              <div style="display:flex;gap:12px;margin-top:6px;">
-                <div style="display:flex;align-items:center;gap:4px;font-size:9px;color:#9ca3af;">
-                  <span style="display:inline-block;width:8px;height:2px;background:#29abe2;border-radius:2px;"></span> Download
-                </div>
-                <div style="display:flex;align-items:center;gap:4px;font-size:9px;color:#9ca3af;">
-                  <span style="display:inline-block;width:8px;height:2px;background:#16a34a;border-radius:2px;"></span> Upload
-                </div>
-              </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Marketing tools -->
+    <div class="wifi-tools">
+      <div class="wifi-tool-card">
+        <div class="wifi-tool-icon"><i data-lucide="globe" width="18" height="18"></i></div>
+        <h3>checkoutmywifi.com performance page</h3>
+        <p>Every property gets a free public page showing verified speeds, uptime percentage, and Lighthouse-earned badges. Drop the link anywhere you promote your property — Airbnb description, VRBO listing, pre-arrival message.</p>
+      </div>
+      <div class="wifi-tool-card">
+        <div class="wifi-tool-icon"><i data-lucide="code" width="18" height="18"></i></div>
+        <h3>Embeddable WiFi widget</h3>
+        <p>Running a direct-booking website? Embed a live widget that shows your property's real-time internet speed and reliability stats — right on your own site. Let the data do the selling before guests ever reach out.</p>
+
+        <!-- Widget sample — matches checkoutmywifi.com/widget/ design -->
+        <div style="margin-top:20px;max-width:340px;font-family:'DM Sans',system-ui,sans-serif;background:#fff;border:1.5px solid #e5e7eb;border-radius:14px;overflow:hidden;box-shadow:rgba(0,0,0,0.07) 0px 2px 12px;">
+          <div style="position:relative;height:90px;background:linear-gradient(rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.62) 100%),url('https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=400&h=90&fit=crop&auto=format') center/cover no-repeat;">
+            <div style="position:absolute;bottom:10px;left:12px;right:12px;display:flex;align-items:flex-end;justify-content:space-between;">
+              <div style="font-size:13px;font-weight:700;color:#fff;text-shadow:rgba(0,0,0,0.4) 0px 1px 3px;line-height:1.2;">Lakefront Cottage</div>
+              <div style="font-size:10px;font-weight:700;color:#16a34a;background:rgba(255,255,255,0.95);border-radius:99px;padding:2px 8px;white-space:nowrap;">Rock Solid</div>
+            </div>
+          </div>
+          <div style="padding:8px 14px 0;font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:0.06em;">Internet &amp; WiFi Performance</div>
+          <div style="display:flex;border-bottom:1px solid #f3f4f6;">
+            <div style="flex:1;padding:12px 8px;text-align:center;background:#f0fdf4;border-right:1px solid #f3f4f6;">
+              <div style="font-size:20px;font-weight:800;color:#16a34a;line-height:1;letter-spacing:-0.5px;">99.8%</div>
+              <div style="font-size:9px;color:#6b7280;margin-top:3px;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;">Uptime</div>
+            </div>
+            <div style="flex:1;padding:12px 8px;text-align:center;background:#eff6ff;border-right:1px solid #f3f4f6;">
+              <div style="font-size:20px;font-weight:800;color:#1e40af;line-height:1;letter-spacing:-0.5px;">587<span style="font-size:10px;font-weight:500;color:#6b7280;margin-left:1px;">Mbps</span></div>
+              <div style="font-size:9px;color:#6b7280;margin-top:3px;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;">Download</div>
+            </div>
+            <div style="flex:1;padding:12px 8px;text-align:center;background:#eff6ff;">
+              <div style="font-size:20px;font-weight:800;color:#1e40af;line-height:1;letter-spacing:-0.5px;">210<span style="font-size:10px;font-weight:500;color:#6b7280;margin-left:1px;">Mbps</span></div>
+              <div style="font-size:9px;color:#6b7280;margin-top:3px;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;">Upload</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#f8fafc;">
+            <div style="display:flex;align-items:center;gap:5px;">
+              <span style="font-size:10px;color:#9ca3af;font-weight:500;">Verified by</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 75" width="10" height="13"><path d="M21,61 L25,15 L31,15 L35,61 Z" fill="none" stroke="#29abe2" stroke-width="2" stroke-linejoin="round"/><rect x="22" y="13" width="12" height="2.5" fill="none" stroke="#29abe2" stroke-width="1.5" rx="0.5"/><rect x="18" y="61" width="20" height="3" fill="none" stroke="#29abe2" stroke-width="1.5" rx="0.5"/><circle cx="28" cy="8" r="0.8" fill="#fbbf24"/></svg>
+              <span style="font-size:11px;font-weight:800;color:#1a2433;letter-spacing:-0.01em;">lighthouse</span>
+            </div>
+            <a href="#" style="text-decoration:none;font-size:10px;color:#2563eb;font-weight:600;white-space:nowrap;">Full report →</a>
           </div>
         </div>
       </div>
@@ -955,8 +1033,6 @@
     <p style="color:var(--text-mid);margin-top:8px;max-width:520px;margin-left:auto;margin-right:auto;">All plans include hardware rental. $99 one-time setup fee.</p>
 
     <div class="pricing-grid">
-
-      <!-- Tier 1 -->
       <div class="price-card">
         <div class="price-tier">Monitoring Only</div>
         <div class="price-amount">$19<span>/mo</span></div>
@@ -972,7 +1048,6 @@
         <button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('monitoring')">Get Started</button>
       </div>
 
-      <!-- Tier 2 - Featured -->
       <div class="price-card featured">
         <div class="price-badge">Most Popular</div>
         <div class="price-tier">Self-Healing</div>
@@ -981,13 +1056,12 @@
         <ul class="price-features">
           <li><i data-lucide="check-circle" width="14" height="14"></i> Everything in Monitoring Only</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Automatic reboot on outage detection</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Smart plug control via Zigbee (works offline)</li>
+          <li><i data-lucide="check-circle" width="14" height="14"></i> Zigbee plug control — works offline</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Heals before guests notice</li>
         </ul>
         <button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('self_healing')">Get Started</button>
       </div>
 
-      <!-- Tier 3 -->
       <div class="price-card">
         <div class="price-tier">Full-Service</div>
         <div class="price-amount">$89<span>/mo</span></div>
@@ -1000,8 +1074,8 @@
         </ul>
         <button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('full_service')">Get Started</button>
       </div>
-
     </div>
+
     <div style="margin-top:28px;display:flex;align-items:center;justify-content:center;gap:10px;">
       <input type="checkbox" id="tos-agree" style="width:18px;height:18px;accent-color:#29abe2;cursor:pointer;flex-shrink:0;">
       <label for="tos-agree" style="font-size:14px;color:var(--text-mid);cursor:pointer;">
@@ -1012,8 +1086,60 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="wrap-wide" style="text-align:center;">
+    <div class="section-tag">FAQ</div>
+    <h2>Common questions</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">
+        Does Lighthouse work with my internet provider?
+        <i data-lucide="chevron-down" width="18" height="18" class="faq-chevron"></i>
+      </button>
+      <div class="faq-a">Yes — Lighthouse is ISP-agnostic. It works with any modem and router, regardless of your internet provider or plan.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        Do I own the device?
+        <i data-lucide="chevron-down" width="18" height="18" class="faq-chevron"></i>
+      </button>
+      <div class="faq-a">No. The Lighthouse hardware is rented and included in your monthly plan. If you cancel, you return it within 14 days. If it breaks through normal use, we replace it. A $200 replacement fee applies for lost or damaged devices.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        Is there a contract?
+        <i data-lucide="chevron-down" width="18" height="18" class="faq-chevron"></i>
+      </button>
+      <div class="faq-a">Month-to-month, cancel anytime through your account portal. No long-term commitment required.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        How long does setup take?
+        <i data-lucide="chevron-down" width="18" height="18" class="faq-chevron"></i>
+      </button>
+      <div class="faq-a">Most setups take under 15 minutes. Plug the Lighthouse device into power and ethernet — we handle the rest remotely. Your device ships within 2–3 business days of signup.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        What if auto-heal doesn't fix the problem?
+        <i data-lucide="chevron-down" width="18" height="18" class="faq-chevron"></i>
+      </button>
+      <div class="faq-a">You'll receive an immediate alert so you can intervene. On our Full-Service plan, our team actively diagnoses the issue and works with you to resolve it.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        What is the $99 setup fee for?
+        <i data-lucide="chevron-down" width="18" height="18" class="faq-chevron"></i>
+      </button>
+      <div class="faq-a">It covers provisioning, configuring, and shipping your Lighthouse device directly to your property.</div>
+    </div>
+  </div>
+</section>
+
 <!-- Contact -->
-<section class="contact-section" id="contact" style="padding:64px 0;text-align:center;background:var(--bg2);">
+<section id="contact" style="padding:64px 0;text-align:center;background:var(--bg2);">
   <div class="wrap">
     <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:12px;">Have questions?</h2>
     <p style="color:var(--text-mid);font-size:16px;margin-bottom:28px;">We're happy to help you choose the right plan for your property.</p>
@@ -1027,6 +1153,15 @@
 
 <script>
   lucide.createIcons();
+
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
 
   async function startCheckout(plan) {
     const agreed = document.getElementById('tos-agree');
