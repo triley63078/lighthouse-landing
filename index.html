@@ -666,6 +666,9 @@
       .testimonial-card { padding: 32px 28px; }
     }
     .hiw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .video-layout { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
+    .video-heading { margin-bottom: 0; }
+
     @media (max-width: 700px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
@@ -745,7 +748,7 @@
       <div class="section-tag">See It In Action</div>
       <h2 style="font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-0.03em;margin-bottom:16px;">Watch Lighthouse in action.</h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center;" class="video-layout">
+    <div class="video-layout">
       <!-- Description: visible on desktop, hidden on mobile -->
       <div class="video-desc">
         <p style="font-size:16px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;">Internet down at your rental? Lighthouse detects it, reboots the right device automatically, and sends you an alert — all before your guests even notice something was wrong.</p>
