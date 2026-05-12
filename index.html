@@ -673,6 +673,9 @@
       .problem-cards { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
       .hiw-grid { grid-template-columns: 1fr; gap: 36px; }
+      .video-layout { grid-template-columns: 1fr; }
+      .video-layout > div:last-child { display: flex; justify-content: center; }
+      .video-layout > div:last-child > div { width: min(240px, 80vw); }
     }
   </style>
 </head>
@@ -737,7 +740,7 @@
 <!-- Video -->
 <section id="how-it-works" style="padding:80px 0;background:#fff;">
   <div class="wrap-wide">
-    <div style="display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center;">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center;" class="video-layout">
       <div>
         <div class="section-tag">See It In Action</div>
         <h2 style="font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-0.03em;margin-bottom:16px;">Watch Lighthouse in action.</h2>
