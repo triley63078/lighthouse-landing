@@ -673,9 +673,9 @@
       .problem-cards { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
       .hiw-grid { grid-template-columns: 1fr; gap: 36px; }
-      .video-layout { grid-template-columns: 1fr; }
+      .video-layout { grid-template-columns: 1fr; gap: 32px; }
       .video-layout > div:last-child { display: flex; justify-content: center; }
-      .video-layout > div:last-child > div { width: min(240px, 80vw); }
+      .video-layout > div:last-child > div { width: min(240px, 75vw); }
     }
   </style>
 </head>
@@ -740,19 +740,21 @@
 <!-- Video -->
 <section id="how-it-works" style="padding:80px 0;background:#fff;">
   <div class="wrap-wide">
+    <!-- Heading: always visible, centered on mobile -->
+    <div class="video-heading">
+      <div class="section-tag">See It In Action</div>
+      <h2 style="font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-0.03em;margin-bottom:16px;">Watch Lighthouse in action.</h2>
+    </div>
     <div style="display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center;" class="video-layout">
-      <div>
-        <div class="section-tag">See It In Action</div>
-        <h2 style="font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-0.03em;margin-bottom:16px;">Watch Lighthouse in action.</h2>
+      <!-- Description: visible on desktop, hidden on mobile -->
+      <div class="video-desc">
         <p style="font-size:16px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;">Internet down at your rental? Lighthouse detects it, reboots the right device automatically, and sends you an alert — all before your guests even notice something was wrong.</p>
         <p style="font-size:16px;color:var(--text-mid);line-height:1.7;">No IT knowledge required. No property visit needed. Just reliable WiFi, every stay.</p>
       </div>
       <div style="flex-shrink:0;">
         <!-- Phone frame -->
         <div style="position:relative;width:240px;background:#1a1a1a;border-radius:36px;padding:14px 10px;box-shadow:0 24px 60px rgba(0,0,0,0.18),0 0 0 1px rgba(255,255,255,0.08);">
-          <!-- Speaker -->
           <div style="width:48px;height:4px;background:#333;border-radius:2px;margin:0 auto 10px;"></div>
-          <!-- Video -->
           <div style="border-radius:24px;overflow:hidden;aspect-ratio:9/16;background:#000;">
             <iframe
               src="https://www.youtube.com/embed/W5omgh4OY4A?rel=0&modestbranding=1"
@@ -761,7 +763,6 @@
               allowfullscreen>
             </iframe>
           </div>
-          <!-- Home indicator -->
           <div style="width:80px;height:4px;background:#333;border-radius:2px;margin:10px auto 0;"></div>
         </div>
       </div>
