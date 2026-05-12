@@ -392,32 +392,80 @@
     }
 
     /* WiFi section */
-    .wifi-section { padding: 88px 0; }
+    .wifi-section {
+      background: linear-gradient(135deg, #0b1929 0%, #0f2640 60%, #0d1f35 100%);
+      padding: 100px 0 80px;
+    }
     .wifi-inner {
       display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 64px;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 72px;
       align-items: center;
     }
-    .wifi-text p { font-size: 16px; color: var(--text-mid); line-height: 1.7; margin-bottom: 16px; }
+    .wifi-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #29abe2;
+      margin-bottom: 14px;
+    }
+    .wifi-h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .wifi-text p { font-size: 16px; color: #8da5b8; line-height: 1.75; margin-bottom: 16px; }
+    .wifi-text strong { color: #fff; }
     .wifi-example-link {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      background: var(--blue-dim);
-      border: 1px solid var(--border);
+      background: rgba(41,171,226,0.15);
+      border: 1px solid rgba(41,171,226,0.4);
       border-radius: 6px;
-      padding: 8px 16px;
+      padding: 9px 18px;
       font-size: 13px;
       font-weight: 600;
-      color: var(--blue);
+      color: #29abe2;
       transition: background 0.15s, box-shadow 0.15s;
+      margin-top: 4px;
     }
     .wifi-example-link:hover {
-      color: var(--blue);
-      background: rgba(41,171,226,0.14);
-      box-shadow: 0 4px 16px var(--blue-glow);
+      color: #29abe2;
+      background: rgba(41,171,226,0.25);
+      box-shadow: 0 4px 16px rgba(41,171,226,0.3);
     }
+    .wifi-tools {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 52px;
+      padding-top: 52px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .wifi-tool-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(41,171,226,0.2);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .wifi-tool-icon {
+      width: 36px; height: 36px;
+      background: rgba(41,171,226,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #29abe2;
+      margin-bottom: 14px;
+    }
+    .wifi-tool-card h3 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .wifi-tool-card p { font-size: 13px; color: #8da5b8; line-height: 1.6; margin: 0; }
+    @media (max-width: 700px) { .wifi-tools { grid-template-columns: 1fr; } }
 
     /* Browser mockup */
     .browser-mock {
@@ -800,14 +848,14 @@
   <div class="wrap-wide">
     <div class="wifi-inner">
       <div class="wifi-text">
-        <div class="section-tag">checkoutmywifi.com</div>
-        <h2 style="font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-0.03em;color:var(--text);margin-bottom:16px;">Turn great WiFi into more bookings</h2>
-        <p>Guests filter by WiFi before they book — but no listing can actually prove it's reliable. Until now.</p>
-        <p>Every Lighthouse property gets a verified performance page at checkoutmywifi.com showing real speeds, real uptime, and earned achievement badges. Share the link in your listing description, pre-arrival messages, or anywhere you market your property.</p>
-        <p style="font-weight:600;color:var(--text);">While every other host says their WiFi is great, you can prove it.</p>
-        <a href="https://checkoutmywifi.com/example" target="_blank" class="wifi-example-link" style="margin-top:8px;">
+        <div class="wifi-kicker">checkoutmywifi.com</div>
+        <h2 class="wifi-h2">Turn great WiFi into more bookings</h2>
+        <p>Guests filter by WiFi before they book — but no listing can actually <em>prove</em> it's reliable. Until now.</p>
+        <p>Every Lighthouse property gets a verified performance page at <strong>checkoutmywifi.com</strong> showing real speeds, real uptime, and earned achievement badges. Share it in your listing, pre-arrival messages, or direct booking site.</p>
+        <p><strong>While every other host says their WiFi is great, you can prove it.</strong></p>
+        <a href="https://checkoutmywifi.com/example" target="_blank" class="wifi-example-link">
           <i data-lucide="external-link" width="14" height="14"></i>
-          See an example
+          See an example page
         </a>
       </div>
       <div>
@@ -870,6 +918,20 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Marketing tools -->
+    <div class="wifi-tools">
+      <div class="wifi-tool-card">
+        <div class="wifi-tool-icon"><i data-lucide="globe" width="18" height="18"></i></div>
+        <h3>checkoutmywifi.com performance page</h3>
+        <p>Every property gets a free public page showing verified speeds, uptime percentage, and Lighthouse-earned badges. Drop the link anywhere you promote your property — Airbnb description, VRBO listing, pre-arrival message.</p>
+      </div>
+      <div class="wifi-tool-card">
+        <div class="wifi-tool-icon"><i data-lucide="code" width="18" height="18"></i></div>
+        <h3>Embeddable WiFi widget</h3>
+        <p>Running a direct-booking website? Embed a live widget that shows your property's real-time internet speed and reliability stats — right on your own site. Let the data do the selling before guests ever reach out.</p>
       </div>
     </div>
   </div>
