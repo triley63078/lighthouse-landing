@@ -149,6 +149,24 @@
       margin: 0 auto 40px;
     }
     .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .hero-strip {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border-dim);
+    }
+    .hero-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-mid);
+      font-weight: 500;
+    }
+    .hero-strip-item i { color: var(--blue); }
     .btn-glow {
       background: var(--blue);
       color: #fff;
@@ -654,8 +672,8 @@
 <!-- Announcement bar -->
 <div class="announce">
   <span class="announce-pill">New</span>
-  Share verified WiFi performance data with your guests —
-  <a href="#wifi-page">See the checkoutmywifi.com feature →</a>
+  Stand out from every other listing — let guests verify your WiFi speed before they book.
+  <a href="#wifi-page">Learn more →</a>
 </div>
 
 <!-- Nav -->
@@ -680,7 +698,7 @@
     <a href="#problem">Why Lighthouse?</a>
     <a href="#how-it-works">How it works</a>
     <a href="#features">Features</a>
-    <a href="#wifi-page">WiFi Page</a>
+    <a href="#wifi-page">Boost Bookings</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
     <a href="#pricing" class="nav-cta">Get Started</a>
@@ -698,6 +716,12 @@
   <div class="hero-actions">
     <a href="#pricing" class="btn-glow">See Plans &amp; Pricing</a>
     <a href="#how-it-works" class="btn-outline">See how it works</a>
+  </div>
+  <div class="hero-strip">
+    <div class="hero-strip-item"><i data-lucide="zap" width="15" height="15"></i> Auto-healing</div>
+    <div class="hero-strip-item"><i data-lucide="signal" width="15" height="15"></i> Cellular monitoring</div>
+    <div class="hero-strip-item"><i data-lucide="bell" width="15" height="15"></i> Instant email alerts</div>
+    <div class="hero-strip-item"><i data-lucide="trending-up" width="15" height="15"></i> Boost bookings with checkoutmywifi.com</div>
   </div>
 </section>
 
