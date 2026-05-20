@@ -1124,7 +1124,7 @@
       </div>
       <div style="display:flex;align-items:center;gap:14px;flex-shrink:0;">
         <button onclick="adjustCount(-1)" style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border-dim);background:var(--bg2);font-size:22px;line-height:1;cursor:pointer;color:var(--text);font-weight:400;display:flex;align-items:center;justify-content:center;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border-dim)'">−</button>
-        <span id="property-count-display" style="font-size:32px;font-weight:800;color:var(--text);min-width:28px;text-align:center;letter-spacing:-0.04em;">1</span>
+        <span id="property-count-display" style="font-size:32px;font-weight:800;color:var(--text);min-width:28px;text-align:center;letter-spacing:-0.04em;">0</span>
         <button onclick="adjustCount(1)" style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border-dim);background:var(--bg2);font-size:22px;line-height:1;cursor:pointer;color:var(--text);font-weight:400;display:flex;align-items:center;justify-content:center;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border-dim)'">+</button>
       </div>
     </div>
@@ -1330,7 +1330,7 @@
   });
 
   const BASE_PRICES = { monitoring: 19, self_healing: 49, full_service: 89 };
-  let propertyCount = 1;
+  let propertyCount = 0;
 
   function getDiscount(n) {
     if (n >= 11) return 0.20;
@@ -1345,28 +1345,48 @@
 
   function updatePricing() {
     const discount = getDiscount(propertyCount);
-    document.getElementById('property-count-display').textContent = propertyCount;
+    document.getElementById('property-count-display').textContent = propertyCount || '0';
 
     const tierEl = document.getElementById('tier-label');
-    if (discount > 0) {
+    if (propertyCount === 0) {
+      tierEl.textContent = 'Select number of properties to get started';
+      tierEl.style.color = 'var(--text-dim)';
+    } else if (discount > 0) {
       const pct = (discount * 100).toFixed(0);
       const range = discount === 0.20 ? '11+ properties' : discount === 0.15 ? '6–10 properties' : '2–5 properties';
       tierEl.textContent = `${range} — save ${pct}%`;
+      tierEl.style.color = 'var(--blue)';
     } else {
       tierEl.textContent = 'Volume discounts available for 2+ properties';
+      tierEl.style.color = 'var(--blue)';
     }
+
+    const btns = document.querySelectorAll('.btn-full');
+    btns.forEach(btn => {
+      btn.disabled = propertyCount === 0;
+      btn.style.opacity = propertyCount === 0 ? '0.4' : '';
+      btn.style.cursor = propertyCount === 0 ? 'not-allowed' : 'pointer';
+    });
 
     ['monitoring', 'self_healing', 'full_service'].forEach(plan => {
       const base = BASE_PRICES[plan];
-      const perProp = Math.round(base * (1 - discount) * 100) / 100;
-      const total = Math.round(perProp * propertyCount * 100) / 100;
-
-      document.getElementById(`price-per-${plan}`).textContent = fmtPrice(perProp);
-
+      const perPropEl = document.getElementById(`price-per-${plan}`);
       const perLabelEl = document.getElementById(`price-per-label-${plan}`);
       const totalEl    = document.getElementById(`price-total-${plan}`);
       const badgeEl    = document.getElementById(`discount-badge-${plan}`);
 
+      if (propertyCount === 0) {
+        perPropEl.textContent = '—';
+        perLabelEl.style.display = 'none';
+        totalEl.style.display = 'none';
+        badgeEl.style.display = 'none';
+        return;
+      }
+
+      const perProp = Math.round(base * (1 - discount) * 100) / 100;
+      const total = Math.round(perProp * propertyCount * 100) / 100;
+
+      perPropEl.textContent = fmtPrice(perProp);
       perLabelEl.style.display = propertyCount > 1 ? '' : 'none';
       if (propertyCount > 1) {
         totalEl.textContent = `${fmtPrice(total)}/mo total`;
@@ -1384,7 +1404,7 @@
   }
 
   function adjustCount(delta) {
-    propertyCount = Math.max(1, propertyCount + delta);
+    propertyCount = Math.max(0, propertyCount + delta);
     updatePricing();
   }
 
