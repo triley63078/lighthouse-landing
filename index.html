@@ -649,6 +649,26 @@
       box-shadow: 0 8px 32px rgba(41,171,226,0.4);
       transform: translateY(-1px);
     }
+    .btn-tip-wrapper { position: relative; }
+    .btn-tip-wrapper::after {
+      content: 'Select number of properties above first';
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a2433;
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s;
+      z-index: 10;
+    }
+    .btn-tip-wrapper.tip-active:hover::after { opacity: 1; }
 
     /* Footer */
     footer {
@@ -1149,7 +1169,7 @@
           <li><i data-lucide="check-circle" width="14" height="14"></i> Cellular backup connection*</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Hardware rental included</li>
         </ul>
-        <button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('monitoring')">Start Risk-Free</button>
+        <div class="btn-tip-wrapper"><button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('monitoring')">Start Risk-Free</button></div>
         <p style="font-size:11px;color:var(--text-dim);text-align:center;margin-top:10px;">By clicking Start Risk-Free you agree to our <a href="/terms.html" target="_blank" style="color:var(--text-dim);text-decoration:underline;">Terms of Service</a>.</p>
       </div>
 
@@ -1171,7 +1191,7 @@
           <li><i data-lucide="check-circle" width="14" height="14"></i> Zigbee plug control — works offline</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Heals before guests notice</li>
         </ul>
-        <button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('self_healing')">Start Risk-Free</button>
+        <div class="btn-tip-wrapper"><button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('self_healing')">Start Risk-Free</button></div>
         <p style="font-size:11px;color:var(--text-dim);text-align:center;margin-top:10px;">By clicking Start Risk-Free you agree to our <a href="/terms.html" target="_blank" style="color:var(--text-dim);text-decoration:underline;">Terms of Service</a>.</p>
       </div>
 
@@ -1192,7 +1212,7 @@
           <li><i data-lucide="check-circle" width="14" height="14"></i> Direct communication with our team</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Priority response &amp; escalation</li>
         </ul>
-        <button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('full_service')">Start Risk-Free</button>
+        <div class="btn-tip-wrapper"><button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('full_service')">Start Risk-Free</button></div>
         <p style="font-size:11px;color:var(--text-dim);text-align:center;margin-top:10px;">By clicking Start Risk-Free you agree to our <a href="/terms.html" target="_blank" style="color:var(--text-dim);text-decoration:underline;">Terms of Service</a>.</p>
       </div>
     </div>
@@ -1366,6 +1386,7 @@
       btn.disabled = propertyCount === 0;
       btn.style.opacity = propertyCount === 0 ? '0.4' : '';
       btn.style.cursor = propertyCount === 0 ? 'not-allowed' : 'pointer';
+      btn.parentElement.classList.toggle('tip-active', propertyCount === 0);
     });
 
     ['monitoring', 'self_healing', 'full_service'].forEach(plan => {
