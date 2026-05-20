@@ -3,109 +3,254 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Lighthouse</title>
+  <title>Welcome to Lighthouse — Tell us about your properties</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue:      #29abe2;
+      --blue-dark: #1a8bbf;
+      --blue-glow: rgba(41,171,226,0.2);
+      --text:      #1a2433;
+      --text-mid:  #4a5568;
+      --text-dim:  #9dafc0;
+      --border:    #e2e8f0;
+      --bg:        #ffffff;
+      --bg2:       #f5f9fc;
+      --green:     #16a34a;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #f5f9fc;
-      color: #1a2433;
+      background: var(--bg2);
+      color: var(--text);
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+      padding: 40px 16px 60px;
     }
     .card {
-      background: #fff;
-      border: 1px solid #e2e8f0;
+      background: var(--bg);
+      border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 56px 48px;
-      max-width: 520px;
+      padding: 40px 44px;
+      max-width: 600px;
       width: 100%;
-      text-align: center;
-      box-shadow: 0 8px 40px rgba(41,171,226,0.1);
+      margin: 0 auto;
+      box-shadow: 0 8px 40px var(--blue-glow);
     }
-    .icon {
-      width: 64px; height: 64px;
+    @media (max-width: 520px) { .card { padding: 28px 20px; } }
+
+    .check-icon {
+      width: 56px; height: 56px;
       background: #f0fdf4;
-      border: 1px solid #bbf7d0;
+      border: 1.5px solid #bbf7d0;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 28px;
-      font-size: 28px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      margin: 0 auto 20px;
     }
-    h1 {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-      color: #1a2433;
+    h1 { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; text-align: center; margin-bottom: 8px; }
+    .sub { font-size: 14px; color: var(--text-mid); text-align: center; line-height: 1.6; margin-bottom: 32px; }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 16px;
     }
-    p {
-      font-size: 15px;
-      color: #4a5568;
-      line-height: 1.7;
-      margin-bottom: 12px;
-    }
-    .steps {
-      background: #f5f9fc;
+
+    .prop-row {
+      background: var(--bg2);
+      border: 1px solid var(--border);
       border-radius: 10px;
-      padding: 24px;
-      margin: 28px 0;
-      text-align: left;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      position: relative;
     }
-    .step {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      padding: 10px 0;
-      border-bottom: 1px solid #e2e8f0;
-      font-size: 14px;
-      color: #4a5568;
+    .prop-num {
+      font-size: 11px; font-weight: 700; color: var(--text-dim);
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;
     }
-    .step:last-child { border-bottom: none; }
-    .step-num {
-      width: 24px; height: 24px;
-      background: #29abe2;
+    .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    @media (max-width: 480px) { .field-grid { grid-template-columns: 1fr; } }
+    .field { display: flex; flex-direction: column; gap: 4px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: 11px; font-weight: 600; color: var(--text-mid); letter-spacing: 0.04em; }
+    input, select {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 13px;
+      color: var(--text);
+      background: var(--bg);
+      font-family: inherit;
+      transition: border-color 0.15s;
+      width: 100%;
+    }
+    input:focus, select:focus { outline: none; border-color: var(--blue); }
+    .remove-btn {
+      position: absolute; top: 12px; right: 14px;
+      background: none; border: none; cursor: pointer;
+      font-size: 18px; color: var(--text-dim); line-height: 1;
+      transition: color 0.15s;
+    }
+    .remove-btn:hover { color: #ef4444; }
+
+    .add-btn {
+      width: 100%;
+      background: none;
+      border: 1.5px dashed var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue);
+      cursor: pointer;
+      font-family: inherit;
+      transition: border-color 0.15s, background 0.15s;
+      margin-top: 4px;
+    }
+    .add-btn:hover { border-color: var(--blue); background: rgba(41,171,226,0.04); }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--blue);
       color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
+      border: none;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 15px;
       font-weight: 700;
-      flex-shrink: 0;
+      cursor: pointer;
+      font-family: inherit;
+      margin-top: 24px;
+      box-shadow: 0 6px 20px var(--blue-glow);
+      transition: box-shadow 0.2s, transform 0.15s;
     }
-    a { color: #29abe2; }
+    .submit-btn:hover:not(:disabled) { box-shadow: 0 8px 28px rgba(41,171,226,0.4); transform: translateY(-1px); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .success-state { text-align: center; }
+    .success-state h2 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+    .success-state p { font-size: 14px; color: var(--text-mid); line-height: 1.7; margin-bottom: 8px; }
+
+    .note { font-size: 12px; color: var(--text-dim); text-align: center; margin-top: 14px; line-height: 1.6; }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="icon">✓</div>
-    <h1>Welcome to Lighthouse</h1>
-    <p>Thank you for signing up. Your setup fee payment was successful and we've been notified.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div>We'll provision and ship your monitoring device within 2-3 business days.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div>You'll receive a tracking number by email when it ships.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div>Follow the simple instructions included with your shipment to set up.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div>Once your device is online and confirmed working, your monthly subscription will begin. You won't be charged until your Lighthouse is up and running.</div>
-      </div>
+    <div id="form-state">
+      <div class="check-icon">✓</div>
+      <h1>Payment successful — you're in!</h1>
+      <p class="sub">One quick step: tell us about your rental properties so we can provision and ship the right devices.</p>
+
+      <hr class="divider">
+
+      <div class="section-label">Your Properties</div>
+      <div id="props-container"></div>
+      <button class="add-btn" onclick="addProperty()">+ Add another property</button>
+
+      <button class="submit-btn" id="submit-btn" onclick="handleSubmit()">Submit Property Details</button>
+      <p class="note">We'll confirm receipt by email and be in touch within 1–2 business days with shipping info.</p>
     </div>
-    <p>Questions? Contact us at <a href="mailto:support@lighthouse-str.com">support@lighthouse-str.com</a></p>
+
+    <div id="done-state" style="display:none;" class="success-state">
+      <div class="check-icon" style="margin-bottom:20px;">📬</div>
+      <h2>Got it — we're on it!</h2>
+      <p>We received your property details and will be in touch within 1–2 business days with shipping and setup info.</p>
+      <p>In the meantime, feel free to reach out at <a href="mailto:support@lighthouse-str.com" style="color:var(--blue);">support@lighthouse-str.com</a>.</p>
+    </div>
   </div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get('session_id') || '';
+  const initialCount = Math.max(1, parseInt(params.get('count') || '1', 10));
+  let propCount = 0;
+
+  function addProperty(name='', address='', network='separate') {
+    propCount++;
+    const idx = propCount;
+    const container = document.getElementById('props-container');
+    const div = document.createElement('div');
+    div.className = 'prop-row';
+    div.id = `prop-${idx}`;
+    div.innerHTML = `
+      <div class="prop-num">Property ${idx}</div>
+      ${idx > 1 ? `<button class="remove-btn" onclick="removeProperty(${idx})" title="Remove">×</button>` : ''}
+      <div class="field-grid">
+        <div class="field full">
+          <label>Property name</label>
+          <input type="text" id="name-${idx}" placeholder="e.g. Beach House on Oak St" value="${name}" />
+        </div>
+        <div class="field full">
+          <label>Property address</label>
+          <input type="text" id="address-${idx}" placeholder="123 Main St, City, NC 27000" value="${address}" />
+        </div>
+        <div class="field full">
+          <label>Network setup</label>
+          <select id="network-${idx}">
+            <option value="separate" ${network==='separate'?'selected':''}>Separate modem + router (2 devices)</option>
+            <option value="combo" ${network==='combo'?'selected':''}>Combo modem/router (1 device)</option>
+            <option value="unknown" ${network==='unknown'?'selected':''}>I'm not sure — email me to discuss</option>
+          </select>
+        </div>
+      </div>
+    `;
+    container.appendChild(div);
+    updatePropNums();
+  }
+
+  function removeProperty(idx) {
+    const el = document.getElementById(`prop-${idx}`);
+    if (el) el.remove();
+    updatePropNums();
+  }
+
+  function updatePropNums() {
+    const rows = document.querySelectorAll('.prop-row');
+    rows.forEach((row, i) => {
+      const numEl = row.querySelector('.prop-num');
+      if (numEl) numEl.textContent = `Property ${i + 1}`;
+    });
+  }
+
+  async function handleSubmit() {
+    const rows = document.querySelectorAll('.prop-row');
+    const properties = [];
+    let valid = true;
+
+    rows.forEach(row => {
+      const id = row.id.replace('prop-', '');
+      const name    = document.getElementById(`name-${id}`)?.value.trim() || '';
+      const address = document.getElementById(`address-${id}`)?.value.trim() || '';
+      const network = document.getElementById(`network-${id}`)?.value || 'separate';
+      if (!name) { valid = false; document.getElementById(`name-${id}`).focus(); }
+      properties.push({ name, address, network_config: network });
+    });
+
+    if (!valid) { alert('Please enter a name for each property.'); return; }
+    if (!properties.length) { alert('Please add at least one property.'); return; }
+
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('/stripe/signup-details', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ session_id: sessionId, properties }),
+      });
+      if (!res.ok) throw new Error('Server error');
+      document.getElementById('form-state').style.display = 'none';
+      document.getElementById('done-state').style.display = '';
+    } catch (e) {
+      alert('Something went wrong. Please email us at support@lighthouse-str.com with your property details.');
+      btn.textContent = 'Submit Property Details';
+      btn.disabled = false;
+    }
+  }
+
+  // Pre-populate rows based on count from URL
+  for (let i = 0; i < initialCount; i++) addProperty();
+</script>
 </body>
 </html>

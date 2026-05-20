@@ -1116,11 +1116,31 @@
       </div>
     </div>
 
+    <!-- Property count selector -->
+    <div style="background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px 28px;max-width:560px;margin:0 auto 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <div>
+        <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px;">How many properties?</div>
+        <div id="tier-label" style="font-size:13px;color:var(--blue);font-weight:600;min-height:18px;"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex-shrink:0;">
+        <button onclick="adjustCount(-1)" style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border-dim);background:var(--bg2);font-size:22px;line-height:1;cursor:pointer;color:var(--text);font-weight:400;display:flex;align-items:center;justify-content:center;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border-dim)'">−</button>
+        <span id="property-count-display" style="font-size:32px;font-weight:800;color:var(--text);min-width:28px;text-align:center;letter-spacing:-0.04em;">1</span>
+        <button onclick="adjustCount(1)" style="width:36px;height:36px;border-radius:50%;border:1.5px solid var(--border-dim);background:var(--bg2);font-size:22px;line-height:1;cursor:pointer;color:var(--text);font-weight:400;display:flex;align-items:center;justify-content:center;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border-dim)'">+</button>
+      </div>
+    </div>
+
     <div class="pricing-grid">
       <div class="price-card">
         <div class="price-tier">Monitoring Only</div>
-        <div class="price-amount">$19<span>/mo</span></div>
-        <div class="price-sub">$99 one-time setup fee</div>
+        <div style="margin-bottom:16px;">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <div class="price-amount" style="margin-bottom:0;"><span id="price-per-monitoring">$19</span><span>/mo</span></div>
+            <span id="discount-badge-monitoring" style="display:none;font-size:11px;font-weight:700;color:#16a34a;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:999px;padding:2px 8px;"></span>
+          </div>
+          <div id="price-per-label-monitoring" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
+          <div id="price-total-monitoring" style="font-size:13px;font-weight:600;color:var(--blue);margin-top:4px;display:none;"></div>
+          <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$99 one-time setup fee</div>
+        </div>
         <ul class="price-features">
           <li><i data-lucide="check-circle" width="14" height="14"></i> 24/7 internet monitoring</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Instant alerts on outage &amp; recovery</li>
@@ -1136,8 +1156,15 @@
       <div class="price-card featured">
         <div class="price-badge">Most Popular</div>
         <div class="price-tier">Self-Healing</div>
-        <div class="price-amount">$49<span>/mo</span></div>
-        <div class="price-sub">$99 one-time setup fee</div>
+        <div style="margin-bottom:16px;">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <div class="price-amount" style="margin-bottom:0;"><span id="price-per-self_healing">$49</span><span>/mo</span></div>
+            <span id="discount-badge-self_healing" style="display:none;font-size:11px;font-weight:700;color:#16a34a;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:999px;padding:2px 8px;"></span>
+          </div>
+          <div id="price-per-label-self_healing" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
+          <div id="price-total-self_healing" style="font-size:13px;font-weight:600;color:var(--blue);margin-top:4px;display:none;"></div>
+          <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$99 one-time setup fee</div>
+        </div>
         <ul class="price-features">
           <li><i data-lucide="check-circle" width="14" height="14"></i> Everything in Monitoring Only</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Automatic reboot on outage detection</li>
@@ -1150,8 +1177,15 @@
 
       <div class="price-card">
         <div class="price-tier">Full-Service</div>
-        <div class="price-amount">$89<span>/mo</span></div>
-        <div class="price-sub">$99 one-time setup fee</div>
+        <div style="margin-bottom:16px;">
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <div class="price-amount" style="margin-bottom:0;"><span id="price-per-full_service">$89</span><span>/mo</span></div>
+            <span id="discount-badge-full_service" style="display:none;font-size:11px;font-weight:700;color:#16a34a;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:999px;padding:2px 8px;"></span>
+          </div>
+          <div id="price-per-label-full_service" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
+          <div id="price-total-full_service" style="font-size:13px;font-weight:600;color:var(--blue);margin-top:4px;display:none;"></div>
+          <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$99 one-time setup fee</div>
+        </div>
         <ul class="price-features">
           <li><i data-lucide="check-circle" width="14" height="14"></i> Everything in Self-Healing</li>
           <li><i data-lucide="check-circle" width="14" height="14"></i> Human response to unresolved incidents</li>
@@ -1295,6 +1329,67 @@
     });
   });
 
+  const BASE_PRICES = { monitoring: 19, self_healing: 49, full_service: 89 };
+  let propertyCount = 1;
+
+  function getDiscount(n) {
+    if (n >= 11) return 0.20;
+    if (n >= 6)  return 0.15;
+    if (n >= 2)  return 0.10;
+    return 0;
+  }
+
+  function fmtPrice(n) {
+    return n % 1 === 0 ? `$${n}` : `$${n.toFixed(2)}`;
+  }
+
+  function updatePricing() {
+    const discount = getDiscount(propertyCount);
+    document.getElementById('property-count-display').textContent = propertyCount;
+
+    const tierEl = document.getElementById('tier-label');
+    if (discount > 0) {
+      const pct = (discount * 100).toFixed(0);
+      const range = discount === 0.20 ? '11+ properties' : discount === 0.15 ? '6–10 properties' : '2–5 properties';
+      tierEl.textContent = `${range} — save ${pct}%`;
+    } else {
+      tierEl.textContent = 'Volume discounts available for 2+ properties';
+    }
+
+    ['monitoring', 'self_healing', 'full_service'].forEach(plan => {
+      const base = BASE_PRICES[plan];
+      const perProp = Math.round(base * (1 - discount) * 100) / 100;
+      const total = Math.round(perProp * propertyCount * 100) / 100;
+
+      document.getElementById(`price-per-${plan}`).textContent = fmtPrice(perProp);
+
+      const perLabelEl = document.getElementById(`price-per-label-${plan}`);
+      const totalEl    = document.getElementById(`price-total-${plan}`);
+      const badgeEl    = document.getElementById(`discount-badge-${plan}`);
+
+      perLabelEl.style.display = propertyCount > 1 ? '' : 'none';
+      if (propertyCount > 1) {
+        totalEl.textContent = `${fmtPrice(total)}/mo total`;
+        totalEl.style.display = '';
+      } else {
+        totalEl.style.display = 'none';
+      }
+      if (discount > 0) {
+        badgeEl.textContent = `Save ${(discount * 100).toFixed(0)}%`;
+        badgeEl.style.display = '';
+      } else {
+        badgeEl.style.display = 'none';
+      }
+    });
+  }
+
+  function adjustCount(delta) {
+    propertyCount = Math.max(1, propertyCount + delta);
+    updatePricing();
+  }
+
+  updatePricing();
+
   async function startCheckout(plan) {
     const btn = event.target;
     const original = btn.textContent;
@@ -1304,7 +1399,7 @@
       const res = await fetch('/stripe/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan }),
+        body: JSON.stringify({ plan, property_count: propertyCount }),
       });
       if (!res.ok) throw new Error('Server error');
       const data = await res.json();
