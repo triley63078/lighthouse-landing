@@ -1386,6 +1386,7 @@
   updatePricing();
 
   async function startCheckout(plan) {
+    if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout');
     const btn = event.target;
     const original = btn.textContent;
     btn.textContent = 'Loading...';
