@@ -1497,7 +1497,6 @@
           first_name: document.getElementById('signup-first').value.trim(),
           last_name:  document.getElementById('signup-last').value.trim(),
           email:      document.getElementById('signup-email').value.trim(),
-          property_name: document.getElementById('signup-property').value.trim(),
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -1551,10 +1550,6 @@
       <div style="margin-bottom:0.75rem;">
         <label style="display:block;font-size:0.78rem;font-weight:600;color:#374151;margin-bottom:0.3rem;">Email</label>
         <input id="signup-email" type="email" required autocomplete="email" style="width:100%;padding:0.6rem 0.75rem;border:1.5px solid #e5e7eb;border-radius:10px;font-size:0.9rem;font-family:inherit;box-sizing:border-box;outline:none;" onfocus="this.style.borderColor='#29abe2'" onblur="this.style.borderColor='#e5e7eb'">
-      </div>
-      <div style="margin-bottom:1.25rem;">
-        <label style="display:block;font-size:0.78rem;font-weight:600;color:#374151;margin-bottom:0.3rem;">Property name</label>
-        <input id="signup-property" type="text" required placeholder="e.g. Oceanview Cottage" style="width:100%;padding:0.6rem 0.75rem;border:1.5px solid #e5e7eb;border-radius:10px;font-size:0.9rem;font-family:inherit;box-sizing:border-box;outline:none;" onfocus="this.style.borderColor='#29abe2'" onblur="this.style.borderColor='#e5e7eb'">
       </div>
       <p id="freeSignupError" style="font-size:0.82rem;color:#dc2626;margin-bottom:0.75rem;min-height:1.2em;"></p>
       <button id="freeSignupSubmit" type="submit" style="width:100%;padding:0.8rem;background:#1a2b3c;color:#fff;border:none;border-radius:12px;font-size:0.95rem;font-weight:700;cursor:pointer;font-family:inherit;">Create account</button>
