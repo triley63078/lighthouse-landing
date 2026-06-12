@@ -1498,6 +1498,7 @@
           first_name: document.getElementById('signup-first').value.trim(),
           last_name:  document.getElementById('signup-last').value.trim(),
           email:      document.getElementById('signup-email').value.trim(),
+          website:    document.getElementById('signup-website').value,
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -1538,6 +1539,7 @@
     <h3 style="font-size:1.25rem;font-weight:800;color:#1a2b3c;margin-bottom:0.25rem;">Create your free account</h3>
     <p style="font-size:0.85rem;color:#6b7280;margin-bottom:1.5rem;">Get a CheckoutMyWiFi page for your property — no device, no commitment.</p>
     <form id="freeSignupForm" onsubmit="submitFreeSignup(event)">
+      <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true"><input id="signup-website" type="text" name="website" tabindex="-1" autocomplete="off"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem;">
         <div>
           <label style="display:block;font-size:0.78rem;font-weight:600;color:#374151;margin-bottom:0.3rem;">First name</label>
