@@ -98,16 +98,6 @@
           <input id="hp-website" type="text" name="website" tabindex="-1" autocomplete="off" />
         </div>
         <div class="row">
-          <div class="field">
-            <label for="f-first">First name</label>
-            <input type="text" id="f-first" placeholder="Jane" autocomplete="given-name" />
-          </div>
-          <div class="field">
-            <label for="f-last">Last name</label>
-            <input type="text" id="f-last" placeholder="Smith" autocomplete="family-name" />
-          </div>
-        </div>
-        <div class="row">
           <div class="field full">
             <label for="f-email">Email address</label>
             <input type="email" id="f-email" placeholder="you@example.com" autocomplete="email" />
@@ -178,10 +168,8 @@
       const btn = document.getElementById('f-btn');
       const err = document.getElementById('f-err');
       err.textContent = '';
-      const first = document.getElementById('f-first').value.trim();
-      const last  = document.getElementById('f-last').value.trim();
       const email = document.getElementById('f-email').value.trim();
-      if (!first || !last || !email) { err.textContent = 'Please fill in all fields.'; return; }
+      if (!email) { err.textContent = 'Please enter your email address.'; return; }
       btn.textContent = 'Sending…';
       btn.disabled = true;
       try {
@@ -189,10 +177,8 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            first_name: first,
-            last_name:  last,
-            email:      email,
-            website:    document.getElementById('hp-website').value,
+            email:   email,
+            website: document.getElementById('hp-website').value,
           }),
         });
         const data = await res.json().catch(() => ({}));
