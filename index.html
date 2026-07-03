@@ -579,7 +579,8 @@
     .pricing-section { padding: 88px 0; text-align: center; }
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, minmax(280px, 420px));
+      justify-content: center;
       gap: 20px;
       margin-top: 48px;
       align-items: stretch;
@@ -1163,7 +1164,7 @@
         <div class="price-tier">Self-Healing</div>
         <div style="margin-bottom:16px;">
           <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-            <div class="price-amount" style="margin-bottom:0;"><span id="price-per-self_healing">$49</span><span>/mo</span></div>
+            <div class="price-amount" style="margin-bottom:0;"><span id="price-per-self_healing">$25</span><span>/mo</span></div>
             <span id="discount-badge-self_healing" style="display:none;font-size:11px;font-weight:700;color:#16a34a;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:999px;padding:2px 8px;"></span>
           </div>
           <div id="price-per-label-self_healing" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
@@ -1182,26 +1183,6 @@
         <p style="font-size:11px;color:var(--text-dim);text-align:center;margin-top:10px;">By clicking Start Risk-Free you agree to our <a href="/terms.html" target="_blank" style="color:var(--text-dim);text-decoration:underline;">Terms of Service</a>.</p>
       </div>
 
-      <div class="price-card">
-        <div class="price-tier">Full-Service</div>
-        <div style="margin-bottom:16px;">
-          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-            <div class="price-amount" style="margin-bottom:0;"><span id="price-per-full_service">$89</span><span>/mo</span></div>
-            <span id="discount-badge-full_service" style="display:none;font-size:11px;font-weight:700;color:#16a34a;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:999px;padding:2px 8px;"></span>
-          </div>
-          <div id="price-per-label-full_service" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
-          <div id="price-total-full_service" style="font-size:13px;font-weight:600;color:var(--blue);margin-top:4px;display:none;"></div>
-          <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$99 one-time setup fee</div>
-        </div>
-        <ul class="price-features">
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Everything in Self-Healing</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Human response to unresolved incidents</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Direct communication with our team</li>
-          <li><i data-lucide="check-circle" width="14" height="14"></i> Priority response &amp; escalation</li>
-        </ul>
-        <div class="btn-tip-wrapper"><button class="btn-full" style="border:none;cursor:pointer;font-family:inherit;" onclick="startCheckout('full_service')">Start Risk-Free</button></div>
-        <p style="font-size:11px;color:var(--text-dim);text-align:center;margin-top:10px;">By clicking Start Risk-Free you agree to our <a href="/terms.html" target="_blank" style="color:var(--text-dim);text-decoration:underline;">Terms of Service</a>.</p>
-      </div>
     </div>
 
     <p style="font-size:12px;color:var(--text-dim);margin-top:24px;">* The cellular backup connection is used exclusively by the Lighthouse device for monitoring and remote management. It is not available for guest internet use.</p>
@@ -1286,7 +1267,7 @@
         What if auto-heal doesn't fix the problem?
         <i data-lucide="chevron-down" width="18" height="18" class="faq-chevron"></i>
       </button>
-      <div class="faq-a">You'll receive an immediate alert so you can intervene. On our Full-Service plan, our team actively diagnoses the issue and works with you to resolve it.</div>
+      <div class="faq-a">You'll receive an immediate alert so you can intervene. If auto-heal can't resolve it, you'll be notified immediately so you can contact your ISP or take other action.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">
@@ -1343,7 +1324,7 @@
     });
   });
 
-  const BASE_PRICES = { self_healing: 49, full_service: 89 };
+  const BASE_PRICES = { self_healing: 25 };
   let propertyCount = 0;
 
   function getDiscount(n) {
@@ -1383,7 +1364,7 @@
       btn.parentElement.classList.toggle('tip-active', propertyCount === 0);
     });
 
-    ['self_healing', 'full_service'].forEach(plan => {
+    ['self_healing'].forEach(plan => {
       const base = BASE_PRICES[plan];
       const perPropEl = document.getElementById(`price-per-${plan}`);
       const perLabelEl = document.getElementById(`price-per-label-${plan}`);
