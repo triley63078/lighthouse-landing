@@ -1156,6 +1156,7 @@
           </div>
           <div id="price-per-label-self_healing" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
           <div id="price-total-self_healing" style="font-size:13px;font-weight:600;color:var(--blue);margin-top:4px;display:none;"></div>
+          <div id="price-select-hint" style="font-size:12px;color:var(--text-dim);margin-top:4px;">↓ Select number of properties below to see pricing</div>
           <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$99 one-time setup fee</div>
         </div>
         <ul class="price-features">
@@ -1355,6 +1356,8 @@
       tierEl.textContent = 'Volume discounts available for 2+ properties';
       tierEl.style.color = 'var(--blue)';
     }
+
+    document.getElementById('price-select-hint').style.display = propertyCount === 0 ? '' : 'none';
 
     const btns = document.querySelectorAll('.btn-full:not(#btn-free-signup)');
     btns.forEach(btn => {
