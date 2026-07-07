@@ -579,13 +579,14 @@
     .pricing-section { padding: 88px 0; text-align: center; }
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(280px, 420px));
+      grid-template-columns: repeat(3, minmax(240px, 380px));
       justify-content: center;
       gap: 20px;
       margin-top: 48px;
       align-items: stretch;
     }
-    @media (max-width: 860px) { .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } }
+    @media (max-width: 1100px) { .pricing-grid { grid-template-columns: repeat(2, minmax(240px, 420px)); } }
+    @media (max-width: 720px) { .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } }
     @media (max-width: 680px) { .guarantee-inner { grid-template-columns: 1fr !important; } .guarantee-left { padding: 28px 20px !important; } }
     .price-card {
       background: var(--bg);
@@ -1115,7 +1116,7 @@
   <div class="wrap-wide">
     <div class="section-tag" style="text-align:center;">Pricing</div>
     <h2 style="font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-0.03em;color:var(--text);">Choose your level of protection</h2>
-    <p style="color:var(--text-mid);margin-top:8px;max-width:520px;margin-left:auto;margin-right:auto;">Start free — no device, no commitment. Paid plans include hardware rental and a $99 one-time setup fee.</p>
+    <p style="color:var(--text-mid);margin-top:8px;max-width:520px;margin-left:auto;margin-right:auto;">Start free — no device, no commitment. Paid plans include hardware rental and a $199 one-time setup fee.</p>
 
     <!-- Guarantee badge -->
     <div style="display:flex;align-items:center;justify-content:center;gap:12px;background:#f0fdf4;border:1px solid #86efac;border-radius:12px;padding:14px 24px;max-width:620px;margin:24px auto 32px;">
@@ -1146,6 +1147,24 @@
         <p style="font-size:11px;color:var(--text-dim);text-align:center;margin-top:10px;">Up to 3 properties per account.</p>
       </div>
 
+      <div class="price-card">
+        <div class="price-tier">Monitoring</div>
+        <div style="margin-bottom:16px;">
+          <div class="price-amount" style="margin-bottom:0;"><span>$9</span><span>/mo</span></div>
+          <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$199 one-time setup fee</div>
+        </div>
+        <ul class="price-features">
+          <li><i data-lucide="check-circle" width="14" height="14"></i> 24/7 internet monitoring &amp; instant alerts</li>
+          <li><i data-lucide="check-circle" width="14" height="14"></i> Live speed testing &amp; Verified CheckOutMyWiFi.com page</li>
+          <li><i data-lucide="check-circle" width="14" height="14"></i> Online dashboard</li>
+          <li><i data-lucide="check-circle" width="14" height="14"></i> Cellular backup connection*</li>
+          <li><i data-lucide="check-circle" width="14" height="14"></i> Hardware rental included</li>
+          <li><i data-lucide="x-circle" width="14" height="14" style="color:#dc2626;"></i> No automatic outage healing</li>
+        </ul>
+        <div class="btn-tip-wrapper"><button id="btn-monitoring-checkout" class="btn-full" style="border:none;cursor:pointer;font-family:inherit;background:var(--text);color:#fff;" onclick="startCheckout('monitoring')">Get Started</button></div>
+        <p style="font-size:11px;color:var(--text-dim);text-align:center;margin-top:10px;">Upgrade to Self-Healing anytime — we'll just ship the plugs.</p>
+      </div>
+
       <div class="price-card featured">
         <div class="price-badge">Most Popular</div>
         <div class="price-tier">Self-Healing</div>
@@ -1164,13 +1183,13 @@
         </div>
         <div style="margin-bottom:16px;">
           <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-            <div class="price-amount" style="margin-bottom:0;"><span id="price-per-self_healing">$25</span><span>/mo</span></div>
+            <div class="price-amount" style="margin-bottom:0;"><span id="price-per-self_healing">$15</span><span>/mo</span></div>
             <span id="discount-badge-self_healing" style="display:none;font-size:11px;font-weight:700;color:#16a34a;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:999px;padding:2px 8px;"></span>
           </div>
           <div id="price-per-label-self_healing" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
           <div id="price-total-self_healing" style="font-size:13px;font-weight:600;color:var(--blue);margin-top:4px;display:none;"></div>
           <div id="price-select-hint" style="font-size:12px;color:var(--text-dim);margin-top:4px;">↑ Select number of properties above to see pricing</div>
-          <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$99 one-time setup fee</div>
+          <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$199 one-time setup fee</div>
         </div>
         <ul class="price-features">
           <li><i data-lucide="check-circle" width="14" height="14"></i> 24/7 internet monitoring &amp; instant alerts</li>
@@ -1272,7 +1291,7 @@
     </div>
     <div class="faq-item">
       <button class="faq-q">
-        What is the $99 setup fee for?
+        What is the $199 setup fee for?
         <i data-lucide="chevron-down" width="18" height="18" class="faq-chevron"></i>
       </button>
       <div class="faq-a">It covers provisioning, configuring, and shipping your Lighthouse device directly to your property.</div>
@@ -1325,7 +1344,7 @@
     });
   });
 
-  const BASE_PRICES = { self_healing: 25 };
+  const BASE_PRICES = { self_healing: 15 };
   let propertyCount = 0;
 
   function getDiscount(n) {
@@ -1359,7 +1378,7 @@
 
     document.getElementById('price-select-hint').style.display = propertyCount === 0 ? '' : 'none';
 
-    const btns = document.querySelectorAll('.btn-full:not(#btn-free-signup)');
+    const btns = document.querySelectorAll('.btn-full:not(#btn-free-signup):not(#btn-monitoring-checkout)');
     btns.forEach(btn => {
       btn.disabled = propertyCount === 0;
       btn.style.opacity = propertyCount === 0 ? '0.4' : '';
