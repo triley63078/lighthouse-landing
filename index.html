@@ -1127,6 +1127,20 @@
       </div>
     </div>
 
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 24px;max-width:440px;margin:0 auto 32px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+        <div>
+          <div style="font-size:14px;font-weight:700;color:var(--text);">How many properties?</div>
+          <div id="tier-label" style="font-size:11px;color:var(--blue);font-weight:600;min-height:16px;margin-top:2px;"></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
+          <button onclick="adjustCount(-1)" style="width:30px;height:30px;border-radius:50%;border:1.5px solid var(--border-dim);background:var(--bg);font-size:18px;line-height:1;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border-dim)'">−</button>
+          <span id="property-count-display" style="font-size:24px;font-weight:800;color:var(--text);min-width:22px;text-align:center;letter-spacing:-0.04em;">0</span>
+          <button onclick="adjustCount(1)" style="width:30px;height:30px;border-radius:50%;border:1.5px solid var(--border-dim);background:var(--bg);font-size:18px;line-height:1;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border-dim)'">+</button>
+        </div>
+      </div>
+    </div>
+
     <div class="pricing-grid">
       <div class="price-card">
         <div class="price-tier">Free</div>
@@ -1150,7 +1164,13 @@
       <div class="price-card">
         <div class="price-tier">Monitoring</div>
         <div style="margin-bottom:16px;">
-          <div class="price-amount" style="margin-bottom:0;"><span>$9</span><span>/mo</span></div>
+          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+            <div class="price-amount" style="margin-bottom:0;"><span id="price-per-monitoring">$9</span><span>/mo</span></div>
+            <span id="discount-badge-monitoring" style="display:none;font-size:11px;font-weight:700;color:#16a34a;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:999px;padding:2px 8px;"></span>
+          </div>
+          <div id="price-per-label-monitoring" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
+          <div id="price-total-monitoring" style="font-size:13px;font-weight:600;color:var(--blue);margin-top:4px;display:none;"></div>
+          <div class="price-select-hint" style="font-size:12px;color:var(--text-dim);margin-top:4px;">↑ Select properties above to see pricing</div>
           <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$199 one-time setup fee</div>
         </div>
         <ul class="price-features">
@@ -1168,19 +1188,6 @@
       <div class="price-card featured">
         <div class="price-badge">Most Popular</div>
         <div class="price-tier">Self-Healing</div>
-        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:16px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
-            <div>
-              <div style="font-size:13px;font-weight:700;color:var(--text);">How many properties?</div>
-              <div id="tier-label" style="font-size:11px;color:var(--blue);font-weight:600;min-height:16px;margin-top:2px;"></div>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;flex-shrink:0;">
-              <button onclick="adjustCount(-1)" style="width:30px;height:30px;border-radius:50%;border:1.5px solid var(--border-dim);background:var(--bg);font-size:18px;line-height:1;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border-dim)'">−</button>
-              <span id="property-count-display" style="font-size:24px;font-weight:800;color:var(--text);min-width:22px;text-align:center;letter-spacing:-0.04em;">0</span>
-              <button onclick="adjustCount(1)" style="width:30px;height:30px;border-radius:50%;border:1.5px solid var(--border-dim);background:var(--bg);font-size:18px;line-height:1;cursor:pointer;color:var(--text);display:flex;align-items:center;justify-content:center;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--blue)'" onmouseout="this.style.borderColor='var(--border-dim)'">+</button>
-            </div>
-          </div>
-        </div>
         <div style="margin-bottom:16px;">
           <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
             <div class="price-amount" style="margin-bottom:0;"><span id="price-per-self_healing">$15</span><span>/mo</span></div>
@@ -1188,7 +1195,7 @@
           </div>
           <div id="price-per-label-self_healing" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
           <div id="price-total-self_healing" style="font-size:13px;font-weight:600;color:var(--blue);margin-top:4px;display:none;"></div>
-          <div id="price-select-hint" style="font-size:12px;color:var(--text-dim);margin-top:4px;">↑ Select number of properties above to see pricing</div>
+          <div class="price-select-hint" style="font-size:12px;color:var(--text-dim);margin-top:4px;">↑ Select properties above to see pricing</div>
           <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$199 one-time setup fee</div>
         </div>
         <ul class="price-features">
@@ -1344,7 +1351,7 @@
     });
   });
 
-  const BASE_PRICES = { self_healing: 15 };
+  const BASE_PRICES = { monitoring: 9, self_healing: 15 };
   let propertyCount = 0;
 
   function getDiscount(n) {
@@ -1376,9 +1383,9 @@
       tierEl.style.color = 'var(--blue)';
     }
 
-    document.getElementById('price-select-hint').style.display = propertyCount === 0 ? '' : 'none';
+    document.querySelectorAll('.price-select-hint').forEach(el => el.style.display = propertyCount === 0 ? '' : 'none');
 
-    const btns = document.querySelectorAll('.btn-full:not(#btn-free-signup):not(#btn-monitoring-checkout)');
+    const btns = document.querySelectorAll('.btn-full:not(#btn-free-signup)');
     btns.forEach(btn => {
       btn.disabled = propertyCount === 0;
       btn.style.opacity = propertyCount === 0 ? '0.4' : '';
@@ -1386,7 +1393,7 @@
       btn.parentElement.classList.toggle('tip-active', propertyCount === 0);
     });
 
-    ['self_healing'].forEach(plan => {
+    ['monitoring', 'self_healing'].forEach(plan => {
       const base = BASE_PRICES[plan];
       const perPropEl = document.getElementById(`price-per-${plan}`);
       const perLabelEl = document.getElementById(`price-per-label-${plan}`);
