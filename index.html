@@ -1452,6 +1452,18 @@
 
   updatePricing();
 
+  // Fire ViewContent when pricing section scrolls into view
+  const _pricingObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (typeof fbq !== 'undefined') fbq('track', 'ViewContent', { content_name: 'Pricing' });
+        _pricingObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  const _pricingSection = document.getElementById('pricing');
+  if (_pricingSection) _pricingObserver.observe(_pricingSection);
+
   async function startCheckout(plan) {
     if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout');
     const btn = event.target;
