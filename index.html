@@ -1188,7 +1188,7 @@
           <div id="price-per-label-monitoring" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
           <div id="price-total-monitoring" style="font-size:13px;font-weight:600;color:var(--blue);margin-top:4px;display:none;"></div>
           <div class="price-select-hint" style="font-size:12px;color:var(--text-dim);margin-top:4px;">↑ Select properties above to see pricing</div>
-          <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$199 one-time setup fee</div>
+          <div id="setup-fee-monitoring" class="price-sub" style="margin-top:6px;margin-bottom:0;">$199 one-time setup fee</div>
         </div>
         <ul class="price-features">
           <li><i data-lucide="check-circle" width="14" height="14"></i> 24/7 internet monitoring &amp; instant alerts</li>
@@ -1213,7 +1213,7 @@
           <div id="price-per-label-self_healing" style="font-size:12px;color:var(--text-dim);margin-top:2px;display:none;">per property</div>
           <div id="price-total-self_healing" style="font-size:13px;font-weight:600;color:var(--blue);margin-top:4px;display:none;"></div>
           <div class="price-select-hint" style="font-size:12px;color:var(--text-dim);margin-top:4px;">↑ Select properties above to see pricing</div>
-          <div class="price-sub" style="margin-top:6px;margin-bottom:0;">$199 one-time setup fee</div>
+          <div id="setup-fee-self_healing" class="price-sub" style="margin-top:6px;margin-bottom:0;">$199 one-time setup fee</div>
         </div>
         <ul class="price-features">
           <li><i data-lucide="check-circle" width="14" height="14"></i> 24/7 internet monitoring &amp; instant alerts</li>
@@ -1401,6 +1401,12 @@
     }
 
     document.querySelectorAll('.price-select-hint').forEach(el => el.style.display = propertyCount === 0 ? '' : 'none');
+
+    const setupFeeText = propertyCount <= 1 ? '$199 one-time setup fee' : `$${199 * propertyCount} one-time setup fee ($199 × ${propertyCount})`;
+    ['monitoring', 'self_healing'].forEach(plan => {
+      const el = document.getElementById(`setup-fee-${plan}`);
+      if (el) el.textContent = setupFeeText;
+    });
 
     const btns = document.querySelectorAll('.btn-full:not(#btn-free-signup)');
     btns.forEach(btn => {
